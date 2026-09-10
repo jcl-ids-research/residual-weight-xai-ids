@@ -56,3 +56,25 @@ the sub-training split.
 Total 49 runs. `evidence:completeness` fails if any is missing.
 
 共 49 次运行。缺少任何一次，`evidence:completeness` 即失败。
+
+## Which script produced which evidence / 证据由哪个脚本产生
+
+| Evidence | Produced by | Rerun command |
+|---|---|---|
+| `evidence/v3/per_seed/**` | `run_v3_explainable.py` | `docs/RUNNING.md` §1 |
+| `evidence/v3/aggregate/*` | `aggregate_v3_results.py` | `docs/RUNNING.md` §1 |
+| `evidence/ddos/per_seed/**` | `prepare_cicddos2019_cache.py` → `run_v3_explainable.py` | `docs/RUNNING.md` §2 |
+| `evidence/v4/aggregate/ddos2019_summary.json` | `analyze_ddos2019.py` | `docs/RUNNING.md` §2 |
+| `evidence/v4/aggregate/ddos2019_evidence.json` | `collect_ddos2019_evidence.py` | `docs/RUNNING.md` §2 |
+| `evidence/v4/aggregate/sampling_diag_*.json` | `diagnose_ddos_sampling.py` | `docs/RUNNING.md` §2 |
+| `evidence/v4/per_seed/**` | `run_v4_deep_baseline.py` | `docs/RUNNING.md` §3 |
+| `evidence/v4/aggregate/v4_summary.json` | `aggregate_v4_results.py` | `docs/RUNNING.md` §3 |
+| `evidence/v4/aggregate/weight_mass_summary.json` | `extract_weight_mass.py` | `docs/RUNNING.md` §4 |
+| `evidence/v4/aggregate/crosscheck_layers.json` | `crosscheck_layers.py` | `docs/RUNNING.md` §4 |
+| `figures/*.png` | the three figure scripts | `docs/RUNNING.md` §5 |
+
+Checking the paper needs none of these commands — `python -m rwxai verify --all`
+recomputes and redraws from the committed evidence in under a minute.
+
+核对论文不需要执行以上任何命令；`python -m rwxai verify --all` 一分钟内即可
+从已提交的证据重算并重绘。

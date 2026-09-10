@@ -52,8 +52,9 @@ from the recorded runs.
 
 **Full rerun (what it does not ship).** Retraining from raw traffic needs the
 four public datasets, a CUDA machine and many hours. The code that does it is
-here — `src/rwxai/run_v3_explainable.py`, `run_v4_deep_baseline.py` — but the
-datasets, model weights, prediction arrays, SHAP arrays and caches are not.
+here, and `docs/RUNNING.md` gives the exact command for every stage — the same
+commands that ran on the experiment server — but the datasets, model weights,
+prediction arrays, SHAP arrays and caches are not.
 See `docs/DATASETS.md` for how to obtain the data.
 
 ## Layout
@@ -70,7 +71,8 @@ docs/               dataset sources, provenance, coverage matrix
 ```
 
 `docs/COVERAGE.md` maps every figure and table to the script and evidence file
-behind it.
+behind it. `docs/RUNNING.md` is the command reference for rerunning the
+experiments themselves.
 
 ## Provenance
 
