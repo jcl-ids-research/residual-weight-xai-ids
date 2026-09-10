@@ -13,29 +13,16 @@ skipping is how an incomplete evidence set would appear to pass.
 from __future__ import annotations
 
 import json
-import shutil
-import subprocess
-import sys
-import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
 from rwxai.evidence import (
     CheckResult,
-    sha256_of,
     verify_completeness,
     verify_manifest,
 )
+from rwxai.figures import check_figures as regenerate_and_compare
 from rwxai.tables import dataset_profiles, declared_variants, variant_semantics
-
-FIGURE_STEMS: tuple[str, ...] = (
-    "fig01_workflow",
-    "fig02_baseline_macro_f1",
-    "fig03_residual_ablation",
-    "fig04_operating_point",
-    "fig05_explanation_stability",
-    "fig06_weight_invariance",
-)
 
 
 @dataclass(frozen=True, slots=True)
@@ -165,70 +152,11 @@ def check_table2(layout: Layout, claims: dict) -> CheckResult:
 
 
 def check_figures(layout: Layout) -> CheckResult:
-    """Redraw every figure and compare the PNG bytes with the published copy.
-
-    PNG only. Matplotlib writes a creation timestamp into PDF and SVG output,
-    so those formats differ on every run even when the drawing is identical.
-    """
-    scripts = {
-        "fig01_workflow": ("make_workflow_figure.py", []),
-        "fig06_weight_invariance": (
-            "make_weight_mass_figure.py",
-            [
-                "--mass",
-                str(layout.evidence / "v4" / "aggregate" / "weight_mass_summary.json"),
-                "--ddos",
-                str(layout.evidence / "v4" / "aggregate" / "ddos2019_summary.json"),
-            ],
-        ),
-    }
-    shared = (
-        "make_v4_figures.py",
-        [
-            "--tables",
-            str(layout.evidence / "v3" / "aggregate"),
-            "--ddos",
-            str(layout.evidence / "v4" / "aggregate" / "ddos2019_summary.json"),
-            "--runs",
-            str(layout.evidence / "v3" / "per_seed"),
-        ],
-    )
-
-    compared = 0
-    problems: list[str] = []
-    with tempfile.TemporaryDirectory(prefix="rwxai_figs_") as scratch:
-        out = Path(scratch)
-        env_src = layout.root / "src" / "rwxai"
-        for script, extra in (shared, *scripts.values()):
-            command = [
-                sys.executable,
-                str(env_src / script),
-                *extra,
-                "--out",
-                str(out),
-            ]
-            result = subprocess.run(
-                command, capture_output=True, text=True, check=False
-            )
-            if result.returncode != 0:
-                problems.append(f"{script} failed: {result.stderr.strip()[:160]}")
-
-        for stem in FIGURE_STEMS:
-            published = layout.figures / f"{stem}.png"
-            regenerated = out / f"{stem}.png"
-            if not regenerated.is_file():
-                problems.append(f"{stem}.png was not regenerated")
-                continue
-            compared += 1
-            if sha256_of(published) != sha256_of(regenerated):
-                problems.append(f"{stem}.png differs from the published figure")
-
-    detail = "; ".join(problems) if problems else f"{compared} figures match exactly"
-    return CheckResult(
-        name="figures:regenerated",
-        passed=not problems and compared == len(FIGURE_STEMS),
-        detail=detail,
-        counts={"compared": compared, "problems": len(problems)},
+    """Redraw every figure and compare it with the published copy."""
+    return regenerate_and_compare(
+        evidence=layout.evidence,
+        figures=layout.figures,
+        source=layout.root / "src" / "rwxai",
     )
 
 
@@ -299,8 +227,3 @@ def run_all(root: Path) -> tuple[bool, dict]:
         "checks": [item.as_dict() for item in results],
     }
     return passed, report
-
-
-def which_python() -> str:
-    """Report the interpreter used, for the record in CI logs."""
-    return shutil.which(sys.executable) or sys.executable
