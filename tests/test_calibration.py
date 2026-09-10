@@ -14,7 +14,7 @@ from pathlib import Path
 
 import pytest
 
-from rwxai.evidence import verify_completeness, verify_manifest
+from rwxai.evidence import sha256_of, verify_completeness, verify_manifest
 from rwxai.verify import (
     Layout,
     check_manuscript_hash,
@@ -60,6 +60,21 @@ def test_tampered_evidence_file_is_detected(repo_copy: Path) -> None:
 
     assert not result.passed
     assert result.name == "manifest:evidence"
+
+
+def test_windows_manifest_paths_are_portable(tmp_path: Path) -> None:
+    """Given backslash paths, When checked on any OS, Then files resolve."""
+    nested = tmp_path / "nested"
+    nested.mkdir()
+    evidence = nested / "metrics.json"
+    evidence.write_text("{}", encoding="utf-8")
+    (tmp_path / "MANIFEST.sha256").write_text(
+        f"{sha256_of(evidence)}  nested\\metrics.json\n", encoding="utf-8"
+    )
+
+    result = verify_manifest(tmp_path)
+
+    assert result.passed, result.detail
 
 
 def test_missing_seed_is_detected(repo_copy: Path) -> None:

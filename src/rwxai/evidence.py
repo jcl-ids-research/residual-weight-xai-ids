@@ -68,7 +68,9 @@ def read_manifest(manifest: Path) -> dict[str, str]:
         if not line.strip():
             continue
         digest, _, relative = line.partition("  ")
-        entries[relative.strip()] = digest.strip()
+        # Manifests were captured on Windows. POSIX treats a backslash as a
+        # normal filename character, so normalize before joining with `root`.
+        entries[relative.strip().replace("\\", "/")] = digest.strip()
     return entries
 
 
