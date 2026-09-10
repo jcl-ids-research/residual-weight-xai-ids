@@ -19,7 +19,7 @@ REPO_ROOT = Path(__file__).resolve().parents[2]
 
 
 def _verify(args: argparse.Namespace) -> int:
-    passed, report = run_all(args.root)
+    passed, report = run_all(args.root, manuscript=args.manuscript)
     if args.report:
         args.report.write_text(
             json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8"
@@ -60,6 +60,12 @@ def main(argv: list[str] | None = None) -> int:
 
     verify = sub.add_parser("verify", help="verify every figure and table")
     verify.add_argument("--report", type=Path, default=None)
+    verify.add_argument(
+        "--manuscript",
+        type=Path,
+        default=None,
+        help="also require this DOCX to match the published claim snapshot",
+    )
     verify.add_argument("--all", action="store_true", help="accepted for clarity")
     verify.set_defaults(handler=_verify)
 

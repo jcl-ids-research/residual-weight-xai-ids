@@ -87,3 +87,21 @@ for CIC-DDoS2019 is recorded in `evidence/v4/aggregate/cicddos2019.audit.json`.
 先划分，后拟合。标准化器、编码器、重采样器和类别权重**一律只在子训练集上拟合**。
 标识类字段（流标识、地址、时间戳）予以剔除；CIC-DDoS2019 的剔除字段清单记录在
 `evidence/v4/aggregate/cicddos2019.audit.json`。
+
+## Reproduction boundary / 复现边界
+
+The repository ships 49 per-seed metric files, aggregate summaries, figures and
+the exact server code snapshot. These are sufficient for offline aggregation,
+table checking and figure regeneration. Raw traffic, trained models,
+predictions, SHAP arrays and caches are intentionally not redistributed.
+
+仓库提供 49 个逐种子指标文件、聚合摘要、图件和服务器代码快照，足以离线重算聚合、
+核对表格并重新绘图。原始流量、训练模型、预测结果、SHAP 数组和缓存不予转发。
+
+Full retraining requires obtaining all four datasets from their publishers and
+installing the training extra with `pip install -e ".[training]"`. A CUDA build
+of PyTorch may require the platform-specific installation command from the
+official PyTorch documentation.
+
+完整重训练需从发布方取得四个数据集，并执行 `pip install -e ".[training]"` 安装训练
+依赖。CUDA 版 PyTorch 可能还需按 PyTorch 官方文档使用对应平台的安装命令。

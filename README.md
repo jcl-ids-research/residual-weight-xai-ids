@@ -16,8 +16,8 @@ lets a reader check that claim against the actual run evidence.
 ## What you can check in one minute / 一分钟内可以核查什么
 
 ```bash
-pip install -e .
-python -m rwxai verify --all
+pip install -e ".[dev]"
+python -m rwxai verify --all --report verification_report.json
 ```
 
 No dataset, no GPU, no network. The command checks:
@@ -31,13 +31,22 @@ No dataset, no GPU, no network. The command checks:
 | `manifest:server_snapshot` | The archived server code is unmodified |
 | `evidence:completeness` | All 49 per-seed runs are present, none quietly dropped |
 | `table1:protocol` | Table 1's record counts, feature counts and seed counts are recomputed from the runs |
-| `table2:configurations` | Table 2's seven configurations are the ones the runner implements |
-| `tables:results` | Tables 3-8 are present and complete in the claim snapshot |
-| `figures:regenerated` | All six figures are redrawn and match the published PNGs **byte-for-byte** |
+| `table2:configurations` | Every Table 2 field matches the runner semantics |
+| `aggregates:recomputed` | Six aggregate files are rebuilt from the 49 public per-seed metrics |
+| `tables:results` | All 272 result cells in Tables 3-8 match the rebuilt evidence |
+| `figures:regenerated` | All six figures redraw as non-blank images with the published structure |
 
 Exit code is `0` only if every check passes.
 
 只有全部检查通过，退出码才为 `0`。
+
+If you also have the submitted DOCX, bind the check to that exact version:
+
+如同时持有投稿 DOCX，可将核验绑定到该文件的精确版本：
+
+```bash
+python -m rwxai verify --all --manuscript /path/to/manuscript.docx
+```
 
 ### The checks can fail / 这些检查是会失败的
 
@@ -61,11 +70,11 @@ Two different things, and this repository is explicit about which is which:
 这是两件不同的事，本仓库明确区分：
 
 **Verification (what this repository supports).** Everything above runs offline
-from the committed evidence. It confirms the paper's numbers and figures follow
-from the recorded runs.
+from the committed evidence. It rebuilds the public aggregates, checks every
+result-table cell and validates that all figure scripts render successfully.
 
-**核验（本仓库支持）。** 以上全部基于已提交的证据离线运行，确认论文的数值与图确实
-由记录的运行结果得出。
+**核验（本仓库支持）。** 以上全部基于已提交证据离线运行：重建公开聚合、逐值核对
+结果表，并确认全部绘图脚本能够成功生成有效图像。
 
 **Full rerun (what it does not ship).** Retraining from raw traffic needs the
 four public datasets, a CUDA machine and many hours. The code that does it is
@@ -116,12 +125,12 @@ multilayer-perceptron control, and a correction to the Spearman computation
 ## Environment / 运行环境
 
 Results were produced on Linux 5.15, Python 3.10.12, scikit-learn 1.7.2,
-imbalanced-learn 0.14.2, XGBoost 3.2.0, CUDA, 24 CPU threads. `pyproject.toml`
-pins those library versions so verification recomputes the same values.
+imbalanced-learn 0.14.2, XGBoost 3.2.0, CUDA, 24 CPU threads. Core numerical
+versions are pinned; figure verification tolerates platform font rasterisation.
 
 结果产生于 Linux 5.15、Python 3.10.12、scikit-learn 1.7.2、imbalanced-learn 0.14.2、
-XGBoost 3.2.0、CUDA、24 CPU 线程。`pyproject.toml` 锁定了这些库版本，以保证核验
-重算出相同数值。
+XGBoost 3.2.0、CUDA、24 CPU 线程。核心数值依赖已锁定；图像核验允许不同平台的
+字体栅格化差异。
 
 ## What is deliberately absent / 刻意不包含的内容
 

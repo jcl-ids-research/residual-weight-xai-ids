@@ -14,7 +14,15 @@ from pathlib import Path
 
 import pytest
 
-from rwxai.verify import Layout, check_table1, run_all
+from rwxai.evidence import verify_completeness, verify_manifest
+from rwxai.verify import (
+    Layout,
+    check_manuscript_hash,
+    check_numeric_tables,
+    check_table1,
+    check_table2,
+    run_all,
+)
 
 REPO = Path(__file__).resolve().parents[1]
 
@@ -48,23 +56,20 @@ def test_tampered_evidence_file_is_detected(repo_copy: Path) -> None:
     payload["sizes"]["official_test"] += 1
     victim.write_text(json.dumps(payload), encoding="utf-8")
 
-    passed, report = run_all(repo_copy)
-    assert not passed
-    failed = {c["name"] for c in report["checks"] if c["status"] == "FAIL"}
-    assert "manifest:evidence" in failed, report
+    result = verify_manifest(repo_copy / "evidence")
+
+    assert not result.passed
+    assert result.name == "manifest:evidence"
 
 
 def test_missing_seed_is_detected(repo_copy: Path) -> None:
     """Given a deleted run, When verified, Then completeness names the seed."""
     shutil.rmtree(repo_copy / "evidence" / "v3" / "per_seed" / "nslkdd" / "seed789")
 
-    passed, report = run_all(repo_copy)
-    assert not passed
-    completeness = next(
-        c for c in report["checks"] if c["name"] == "evidence:completeness"
-    )
-    assert completeness["status"] == "FAIL"
-    assert "789" in completeness["detail"], completeness
+    result = verify_completeness(repo_copy / "evidence")
+
+    assert not result.passed
+    assert "789" in result.detail
 
 
 def test_tampered_table1_value_is_detected(repo_copy: Path) -> None:
@@ -79,6 +84,40 @@ def test_tampered_table1_value_is_detected(repo_copy: Path) -> None:
     assert "train" in result.detail, result.detail
 
 
+def test_tampered_table2_label_is_detected(repo_copy: Path) -> None:
+    """Given a renamed configuration, When verified, Then Table 2 fails."""
+    claims_path = repo_copy / "paper_claims.json"
+    claims = json.loads(claims_path.read_text(encoding="utf-8"))
+    claims["tables"]["2"][1][0] = "CORRUPTED_VARIANT"
+    result = check_table2(Layout(repo_copy), claims)
+
+    assert not result.passed
+    assert result.name == "table2:configurations"
+
+
+def test_tampered_result_cell_is_detected(repo_copy: Path) -> None:
+    """Given a changed Table 3 value, When verified, Then results fail."""
+    claims_path = repo_copy / "paper_claims.json"
+    claims = json.loads(claims_path.read_text(encoding="utf-8"))
+    claims["tables"]["3"][1][2] = "0.9999±0.0000"
+    result = check_numeric_tables(Layout(repo_copy), claims)
+
+    assert not result.passed
+    assert result.name == "tables:results"
+
+
+def test_manuscript_hash_rejects_wrong_file(tmp_path: Path) -> None:
+    """Given a different manuscript, When bound, Then its hash fails."""
+    manuscript = tmp_path / "manuscript.docx"
+    manuscript.write_bytes(b"different manuscript")
+    claims = {"source": {"sha256": "0" * 64}}
+
+    result = check_manuscript_hash(claims, manuscript)
+
+    assert not result.passed
+    assert "does not match" in result.detail
+
+
 def test_tampered_figure_is_detected(repo_copy: Path) -> None:
     """Given an altered figure, When verified, Then the figure check fails."""
     victim = repo_copy / "figures" / "fig02_baseline_macro_f1.png"
@@ -86,10 +125,10 @@ def test_tampered_figure_is_detected(repo_copy: Path) -> None:
     data[-1] ^= 0xFF
     victim.write_bytes(bytes(data))
 
-    passed, report = run_all(repo_copy)
-    assert not passed
-    failed = {c["name"] for c in report["checks"] if c["status"] == "FAIL"}
-    assert "manifest:figures" in failed or "figures:regenerated" in failed, report
+    result = verify_manifest(repo_copy / "figures")
+
+    assert not result.passed
+    assert result.name == "manifest:figures"
 
 
 def test_tampered_snapshot_is_detected(repo_copy: Path) -> None:
@@ -103,7 +142,7 @@ def test_tampered_snapshot_is_detected(repo_copy: Path) -> None:
         victim.read_text(encoding="utf-8") + "\n# tampered\n", encoding="utf-8"
     )
 
-    passed, report = run_all(repo_copy)
-    assert not passed
-    failed = {c["name"] for c in report["checks"] if c["status"] == "FAIL"}
-    assert "manifest:server_snapshot" in failed, report
+    result = verify_manifest(repo_copy / "server_snapshot")
+
+    assert not result.passed
+    assert result.name == "manifest:server_snapshot"

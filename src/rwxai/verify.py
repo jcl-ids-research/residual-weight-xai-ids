@@ -16,8 +16,11 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from rwxai.aggregates import check_public_aggregates
+from rwxai.claim_validation import check_result_claims, check_table2_claims
 from rwxai.evidence import (
     CheckResult,
+    sha256_of,
     verify_completeness,
     verify_manifest,
 )
@@ -124,11 +127,10 @@ def check_table1(layout: Layout, claims: dict) -> CheckResult:
 
 
 def check_table2(layout: Layout, claims: dict) -> CheckResult:
-    """Check Table 2's configurations against the runner that implemented them."""
-    rows = claims["tables"].get("2", [])
+    """Check every Table 2 field against the implemented configurations."""
     try:
         variants = declared_variants(layout.snapshot / "run_v3_explainable.py")
-        semantics = variant_semantics(variants)
+        variant_semantics(variants)
     except (OSError, LookupError, ValueError) as error:
         return CheckResult(
             name="table2:configurations",
@@ -136,19 +138,7 @@ def check_table2(layout: Layout, claims: dict) -> CheckResult:
             detail=f"could not read the runner's variant list: {error}",
             counts={"checked": 0, "problems": 1},
         )
-    data_rows = [row for row in rows[1:] if row and row[0].strip()]
-    problems: list[str] = []
-    if len(data_rows) != len(variants):
-        problems.append(
-            f"table2 lists {len(data_rows)} rows, runner declares {len(variants)}"
-        )
-    return CheckResult(
-        name="table2:configurations",
-        passed=not problems,
-        detail="; ".join(problems)
-        or f"{len(variants)} configurations match the runner",
-        counts={"checked": len(semantics), "problems": len(problems)},
-    )
+    return check_table2_claims(claims)
 
 
 def check_figures(layout: Layout) -> CheckResult:
@@ -161,28 +151,32 @@ def check_figures(layout: Layout) -> CheckResult:
 
 
 def check_numeric_tables(layout: Layout, claims: dict) -> CheckResult:
-    """Confirm the result tables carry the expected number of populated cells.
+    """Compare every result-table cell with committed evidence."""
+    try:
+        return check_result_claims(layout.root, claims)
+    except (OSError, KeyError, ValueError) as error:
+        return CheckResult(
+            name="tables:results",
+            passed=False,
+            detail=f"could not recompute result tables: {error}",
+            counts={"checked": 0, "problems": 1},
+        )
 
-    The per-cell recomputation lives with the manuscript toolchain; what this
-    repository guarantees is that the published claim snapshot is complete and
-    was taken from the manuscript whose hash is recorded.
-    """
-    expected_rows = {"3": 25, "4": 9, "5": 13, "6": 7, "7": 8, "8": 5}
-    problems: list[str] = []
-    cells = 0
-    for number, want in expected_rows.items():
-        rows = claims["tables"].get(number)
-        if rows is None:
-            problems.append(f"table{number} missing from the claim snapshot")
-            continue
-        if len(rows) != want:
-            problems.append(f"table{number} has {len(rows)} rows, expected {want}")
-        cells += sum(len(row) for row in rows)
+
+def check_manuscript_hash(claims: dict, manuscript: Path) -> CheckResult:
+    """Bind a reviewer-provided manuscript to the published table snapshot."""
+    expected = str(claims["source"]["sha256"])
+    actual = sha256_of(manuscript) if manuscript.is_file() else "missing"
+    passed = actual == expected
     return CheckResult(
-        name="tables:results",
-        passed=not problems,
-        detail="; ".join(problems) if problems else f"{cells} result cells present",
-        counts={"cells": cells, "problems": len(problems)},
+        name="manuscript:sha256",
+        passed=passed,
+        detail=(
+            "manuscript matches the published claim snapshot"
+            if passed
+            else f"manuscript does not match: expected {expected}, got {actual}"
+        ),
+        counts={"checked": 1, "problems": 0 if passed else 1},
     )
 
 
@@ -203,7 +197,7 @@ def _guarded(check, layout: Layout) -> CheckResult:
         )
 
 
-def run_all(root: Path) -> tuple[bool, dict]:
+def run_all(root: Path, manuscript: Path | None = None) -> tuple[bool, dict]:
     """Run every check and return (passed, report)."""
     layout = Layout(root)
     if not layout.claims.is_file():
@@ -217,13 +211,17 @@ def run_all(root: Path) -> tuple[bool, dict]:
         verify_completeness(layout.evidence),
         check_table1(layout, claims),
         check_table2(layout, claims),
+        check_public_aggregates(layout.root),
         check_numeric_tables(layout, claims),
         _guarded(check_figures, layout),
     ]
+    if manuscript is not None:
+        results.append(check_manuscript_hash(claims, manuscript))
     passed = all(item.passed for item in results)
     report = {
         "status": "PASS" if passed else "FAIL",
-        "manuscript_sha256": claims["source"]["sha256"],
+        "claim_snapshot_sha256": claims["source"]["sha256"],
+        "manuscript": str(manuscript) if manuscript is not None else None,
         "checks": [item.as_dict() for item in results],
     }
     return passed, report

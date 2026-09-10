@@ -193,12 +193,12 @@ def write_csv(summary: dict, path: Path) -> None:
                 )
 
 
-def main() -> None:
+def main(argv: list[str] | None = None) -> int:
     """Aggregate results and emit the publication-ready summary files."""
     parser = argparse.ArgumentParser(description="Aggregate V4 deep baseline results")
     parser.add_argument("--results", required=True)
     parser.add_argument("--out", required=True)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
 
     results = Path(args.results)
     output = Path(args.out)
@@ -237,7 +237,8 @@ def main() -> None:
             ensure_ascii=False,
         )
     )
+    return 0 if integrity["all_complete"] else 1
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

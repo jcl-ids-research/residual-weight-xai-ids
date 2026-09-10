@@ -21,10 +21,14 @@ dependencies = [
   "xgboost==3.2.0",
   "matplotlib>=3.8,<4",
   "python-docx>=1.1,<2",
+  # figures.py inspects regenerated PNGs; without this a fresh install crashes
+  # on `verify --all`.
+  "pillow>=10,<12",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "ruff>=0.8,<1"]
+training = ["torch>=2.2,<3"]
 
 [project.scripts]
 rwxai = "rwxai.__main__:main"
@@ -40,9 +44,8 @@ pythonpath = ["src"]
 [tool.ruff]
 line-length = 88
 target-version = "py310"
-# Files copied verbatim from the experiment server are excluded from linting.
-# Their SHA-256 values are what prove the published numbers came from that
-# exact code, so a formatting fix here would silently break provenance.
+# Files copied verbatim from the experiment server remain excluded from linting.
+# Maintained verification modules and their tests are linted in CI.
 extend-exclude = [
   "server_snapshot",
   "src/rwxai/aggregate_v3_results.py",

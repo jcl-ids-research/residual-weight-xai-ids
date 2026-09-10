@@ -39,6 +39,51 @@ run finishes in minutes and catches a wrong path before you spend hours.
 每个脚本都支持 `--smoke`，在极小子样本上运行。**建议先跑它**：几分钟即可完成，
 能在你耗费数小时之前发现路径写错。
 
+Install verification and test dependencies with:
+
+安装验证与测试依赖：
+
+```bash
+pip install -e ".[dev]"
+```
+
+For full model training, also install `.[training]`. Select the appropriate
+CUDA-enabled PyTorch wheel for the target machine when needed.
+
+完整模型训练还需安装 `.[training]`；如使用 CUDA，请按目标机器选择对应的 PyTorch
+CUDA 安装包。
+
+## Offline verification / 离线核验
+
+Rebuild all six public aggregates, validate every table value and redraw all
+six figures:
+
+重建 6 个公开聚合文件、逐值核对全部表格并重绘 6 幅图：
+
+```bash
+python -m rwxai verify --all --report verification_report.json
+```
+
+If the submitted DOCX is available, bind the verification to that exact file:
+
+如持有投稿 DOCX，可将核验绑定到该文件的精确版本：
+
+```bash
+python -m rwxai verify --all --manuscript /path/to/manuscript.docx
+```
+
+To rebuild only the V3 public CSV aggregates without unpublished prediction or
+SHAP arrays:
+
+如只需在没有预测和 SHAP 数组的条件下重建 V3 公开 CSV：
+
+```bash
+python src/rwxai/aggregate_v3_results.py \
+    --root evidence/v3/per_seed \
+    --output rebuilt-v3 \
+    --metrics-only
+```
+
 ## 1. Main experiment — the first three datasets / 主实验：前三个数据集
 
 Produces `evidence/v3/per_seed/` and the aggregates behind Tables 3-5, 7, 8 and
@@ -218,11 +263,13 @@ python src/rwxai/make_weight_mass_figure.py \
 ```
 
 These three run against the committed evidence, so they work without the
-datasets. `python -m rwxai verify --all` runs exactly these commands into a
-scratch directory and compares the PNG output byte for byte.
+datasets. `python -m rwxai verify --all` runs them in a scratch directory and
+checks that each PNG is non-blank and retains the published structure. The
+published files themselves remain protected by their SHA-256 manifest.
 
 这三条命令基于已提交的证据运行，**不需要数据集**。`python -m rwxai verify --all`
-执行的正是这三条命令（输出到临时目录），并逐字节比对 PNG。
+会在临时目录执行这些命令，确认每幅 PNG 非空且保持发布版结构；已发布文件本身仍由
+SHA-256 清单严格保护。
 
 ## Order / 执行顺序
 

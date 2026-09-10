@@ -32,6 +32,7 @@ jobs:
         run: pytest -q
 
       - name: Verify every figure and table
+        if: always()
         run: python -m rwxai verify --all --report verification_report.json
 
       - uses: actions/upload-artifact@v4

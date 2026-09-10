@@ -253,7 +253,12 @@ def verify_test_identity(root: Path, dataset: str) -> str:
     return digest
 
 
-def aggregate(root: Path, output: Path) -> dict:
+def aggregate(
+    root: Path,
+    output: Path,
+    *,
+    require_prediction_arrays: bool = True,
+) -> dict:
     output.mkdir(parents=True, exist_ok=True)
     runs: dict[tuple[str, int], dict] = {}
     for dataset in DATASETS:
@@ -267,9 +272,11 @@ def aggregate(root: Path, output: Path) -> dict:
                 raise RuntimeError(f"Run identity failed: {path}")
             runs[(dataset, seed)] = result
 
-    test_digests = {
-        dataset: verify_test_identity(root, dataset) for dataset in DATASETS
-    }
+    test_digests = (
+        {dataset: verify_test_identity(root, dataset) for dataset in DATASETS}
+        if require_prediction_arrays
+        else {}
+    )
 
     performance_rows = []
     performance_summary: dict[str, dict] = {}
@@ -478,6 +485,11 @@ def aggregate(root: Path, output: Path) -> dict:
         "raw_training_baselines": baseline_summary,
         "explanation": explanation_summary,
         "test_label_sha256": test_digests,
+        "verification_scope": (
+            "metrics plus prediction, validation and SHAP array identity"
+            if require_prediction_arrays
+            else "public metrics only; unpublished arrays were not checked"
+        ),
         "evidence_files": len(manifest),
         "statistical_scope": (
             "UNSW-NB15 and NSL-KDD use ten paired seeds; CIC-IDS-2017 uses "
@@ -545,12 +557,21 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument(
         "--output", default="/opt/ids_revision/v3_strengthened/aggregate"
     )
+    parser.add_argument(
+        "--metrics-only",
+        action="store_true",
+        help="rebuild public aggregates without unpublished prediction arrays",
+    )
     return parser.parse_args()
 
 
 if __name__ == "__main__":
     arguments = parse_args()
-    result = aggregate(Path(arguments.root), Path(arguments.output))
+    result = aggregate(
+        Path(arguments.root),
+        Path(arguments.output),
+        require_prediction_arrays=not arguments.metrics_only,
+    )
     print(json.dumps({
         "verified_runs": result["verified_runs"],
         "evidence_files": result["evidence_files"],
