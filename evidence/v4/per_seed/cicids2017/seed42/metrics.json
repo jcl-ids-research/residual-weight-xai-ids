@@ -1,0 +1,247 @@
+{
+  "schema": "v4_deep_baseline",
+  "dataset": "cicids2017",
+  "seed": 42,
+  "smoke": false,
+  "class_names": [
+    "BENIGN",
+    "ATTACK"
+  ],
+  "normal_class": "BENIGN",
+  "architectures": [
+    "MLP"
+  ],
+  "configurations": [
+    "raw",
+    "smotenc_tomek_weight",
+    "smotenc_tomek_residual_weight"
+  ],
+  "hyperparameters": {
+    "batch_size": 1024,
+    "max_epochs": 200,
+    "patience": 20,
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001
+  },
+  "environment": {
+    "python": "3.10.12",
+    "torch": "2.2.2+cu121",
+    "device": "cuda",
+    "cuda": true
+  },
+  "runs": {
+    "MLP::raw": {
+      "architecture": "MLP",
+      "configuration": "raw",
+      "weight_source": "none",
+      "training_rows": 225000,
+      "metrics": {
+        "accuracy": 0.6638099097753983,
+        "balanced_accuracy": 0.5917140107298258,
+        "macro_precision": 0.8039563265237182,
+        "macro_recall": 0.5917140107298258,
+        "macro_f1": 0.5457344623148414,
+        "weighted_precision": 0.7742536361538631,
+        "weighted_recall": 0.6638099097753983,
+        "weighted_f1": 0.5870318057711466,
+        "mcc": 0.33392845815949684,
+        "log_loss": 9.998918081256363,
+        "macro_roc_auc_ovr": null,
+        "macro_pr_auc_ovr": 0.6377113599629305,
+        "per_class_pr_auc": {
+          "BENIGN": 0.6510643883852828,
+          "ATTACK": 0.6243583315405782
+        },
+        "attack_pr_auc": 0.6279477171769713,
+        "default_attack_recall": 0.18739594978592913,
+        "false_alerts": 1644,
+        "false_alerts_per_10000_benign": 39.679283262776295,
+        "per_class": {
+          "BENIGN": {
+            "precision": 0.6373818842303285,
+            "recall": 0.9960320716737223,
+            "f1": 0.777332404076174,
+            "support": 414322
+          },
+          "ATTACK": {
+            "precision": 0.970530768817108,
+            "recall": 0.18739594978592913,
+            "f1": 0.31413652055350877,
+            "support": 288923
+          }
+        },
+        "confusion_matrix": [
+          [
+            412678,
+            1644
+          ],
+          [
+            234780,
+            54143
+          ]
+        ],
+        "validation_attack_threshold_1pct_fpr": 0.23844898881839227,
+        "validation_operating_point": {
+          "false_positive_budget": 0.01,
+          "benign_records": 21842,
+          "attack_records": 3158,
+          "allowed_false_positives": 218,
+          "actual_false_positives": 218,
+          "actual_false_positive_rate": 0.00998077099166743,
+          "attack_recall": 0.999366687777074
+        },
+        "attack_recall_at_validation_1pct_fpr": 0.18935148811274977,
+        "attack_precision_at_validation_1pct_fpr": 0.9487539670152437,
+        "test_fpr_at_validation_1pct_fpr": 0.007132133944130411,
+        "threshold_false_alerts": 2955,
+        "threshold_false_alerts_per_10000_benign": 71.3213394413041
+      },
+      "train_seconds": 317.313488369924,
+      "test_seconds": 0.20282859401777387,
+      "best_validation_loss": 0.013699004287719727,
+      "best_epoch": 108
+    },
+    "MLP::smotenc_tomek_weight": {
+      "architecture": "MLP",
+      "configuration": "smotenc_tomek_weight",
+      "weight_source": "original_sub_training_distribution",
+      "training_rows": 308717,
+      "metrics": {
+        "accuracy": 0.6811324645038358,
+        "balanced_accuracy": 0.6130262128083872,
+        "macro_precision": 0.809771324885053,
+        "macro_recall": 0.6130262128083872,
+        "macro_f1": 0.5797008223177413,
+        "weighted_precision": 0.781248170394013,
+        "weighted_recall": 0.6811324645038358,
+        "weighted_f1": 0.6165182479877476,
+        "mcc": 0.3742313706165964,
+        "log_loss": 7.889955861949615,
+        "macro_roc_auc_ovr": null,
+        "macro_pr_auc_ovr": 0.6763144419787492,
+        "per_class_pr_auc": {
+          "BENIGN": 0.6758787681937326,
+          "ATTACK": 0.6767501157637659
+        },
+        "attack_pr_auc": 0.6751594822287906,
+        "default_attack_recall": 0.23108232989412403,
+        "false_alerts": 2084,
+        "false_alerts_per_10000_benign": 50.29904277349501,
+        "per_class": {
+          "BENIGN": {
+            "precision": 0.6498117894816486,
+            "recall": 0.9949700957226505,
+            "f1": 0.7861751204804343,
+            "support": 414322
+          },
+          "ATTACK": {
+            "precision": 0.9697308602884573,
+            "recall": 0.23108232989412403,
+            "f1": 0.3732265241550485,
+            "support": 288923
+          }
+        },
+        "confusion_matrix": [
+          [
+            412238,
+            2084
+          ],
+          [
+            222158,
+            66765
+          ]
+        ],
+        "validation_attack_threshold_1pct_fpr": 0.38087785243988037,
+        "validation_operating_point": {
+          "false_positive_budget": 0.01,
+          "benign_records": 21842,
+          "attack_records": 3158,
+          "allowed_false_positives": 218,
+          "actual_false_positives": 218,
+          "actual_false_positive_rate": 0.00998077099166743,
+          "attack_recall": 0.9952501583280557
+        },
+        "attack_recall_at_validation_1pct_fpr": 0.23987359954036197,
+        "attack_precision_at_validation_1pct_fpr": 0.9585090934236913,
+        "test_fpr_at_validation_1pct_fpr": 0.00724074512094458,
+        "threshold_false_alerts": 3000,
+        "threshold_false_alerts_per_10000_benign": 72.4074512094458
+      },
+      "train_seconds": 246.22372018999886,
+      "test_seconds": 0.15936400403734297,
+      "best_validation_loss": 0.018345246238708496,
+      "best_epoch": 53
+    },
+    "MLP::smotenc_tomek_residual_weight": {
+      "architecture": "MLP",
+      "configuration": "smotenc_tomek_residual_weight",
+      "weight_source": "post_smote_tomek_distribution",
+      "training_rows": 308717,
+      "metrics": {
+        "accuracy": 0.664543651216859,
+        "balanced_accuracy": 0.593470161827379,
+        "macro_precision": 0.7916802725964005,
+        "macro_recall": 0.593470161827379,
+        "macro_f1": 0.5500683002638249,
+        "weighted_precision": 0.7643831455083868,
+        "weighted_recall": 0.664543651216859,
+        "weighted_f1": 0.5905367630761025,
+        "mcc": 0.3302326590841045,
+        "log_loss": 9.126800171620943,
+        "macro_roc_auc_ovr": null,
+        "macro_pr_auc_ovr": 0.6584260773862709,
+        "per_class_pr_auc": {
+          "BENIGN": 0.6586260654082383,
+          "ATTACK": 0.6582260893643036
+        },
+        "attack_pr_auc": 0.656788409122599,
+        "default_attack_recall": 0.19488583463414128,
+        "false_alerts": 3292,
+        "false_alerts_per_10000_benign": 79.45510979383185,
+        "per_class": {
+          "BENIGN": {
+            "precision": 0.6385963712972659,
+            "recall": 0.9920544890206168,
+            "f1": 0.7770178304069688,
+            "support": 414322
+          },
+          "ATTACK": {
+            "precision": 0.9447641738955351,
+            "recall": 0.19488583463414128,
+            "f1": 0.323118770120681,
+            "support": 288923
+          }
+        },
+        "confusion_matrix": [
+          [
+            411030,
+            3292
+          ],
+          [
+            232616,
+            56307
+          ]
+        ],
+        "validation_attack_threshold_1pct_fpr": 0.4935006054192601,
+        "validation_operating_point": {
+          "false_positive_budget": 0.01,
+          "benign_records": 21842,
+          "attack_records": 3158,
+          "allowed_false_positives": 218,
+          "actual_false_positives": 218,
+          "actual_false_positive_rate": 0.00998077099166743,
+          "attack_recall": 0.9971500949968335
+        },
+        "attack_recall_at_validation_1pct_fpr": 0.19489275689370525,
+        "attack_precision_at_validation_1pct_fpr": 0.9444966285350062,
+        "test_fpr_at_validation_1pct_fpr": 0.007986541868401871,
+        "threshold_false_alerts": 3309,
+        "threshold_false_alerts_per_10000_benign": 79.8654186840187
+      },
+      "train_seconds": 236.35065346502233,
+      "test_seconds": 0.16293592506553978,
+      "best_validation_loss": 0.01781401020050049,
+      "best_epoch": 50
+    }
+  }
+}

@@ -1,0 +1,398 @@
+{
+  "collected_at": "2026-09-07T10:47:48+08:00",
+  "host": "sjtu-a100",
+  "capture_days": [
+    {
+      "day": "CSV-03-11",
+      "server_path": "/opt/CIC-DDoS2019/CSV-03-11",
+      "files": [
+        "LDAP.csv",
+        "MSSQL.csv",
+        "NetBIOS.csv",
+        "Portmap.csv",
+        "Syn.csv",
+        "UDP.csv",
+        "UDPLag.csv"
+      ],
+      "timestamp_evidence": [
+        {
+          "file": "LDAP.csv",
+          "raw_samples": [
+            "2018-11-03 10:09:00.565557",
+            "2018-11-03 10:09:00.565559",
+            "2018-11-03 10:09:00.565608",
+            "2018-11-03 10:09:00.565993",
+            "2018-11-03 10:09:00.565994"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-11-03",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "MSSQL.csv",
+          "raw_samples": [
+            "2018-11-03 10:29:52.072724",
+            "2018-11-03 10:29:52.072729",
+            "2018-11-03 10:29:52.072825",
+            "2018-11-03 10:29:52.073221",
+            "2018-11-03 10:29:52.073285"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-11-03",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "NetBIOS.csv",
+          "raw_samples": [
+            "2018-11-03 10:01:48.920574",
+            "2018-11-03 10:01:48.920625",
+            "2018-11-03 10:01:48.920685",
+            "2018-11-03 10:01:48.921008",
+            "2018-11-03 10:01:48.921010"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-11-03",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "Portmap.csv",
+          "raw_samples": [
+            "2018-11-03 09:18:16.964447",
+            "2018-11-03 09:18:18.506537",
+            "2018-11-03 09:18:18.610576",
+            "2018-11-03 09:18:18.610579",
+            "2018-11-03 09:18:18.610581"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-11-03",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "Syn.csv",
+          "raw_samples": [
+            "2018-11-03 11:36:28.607338",
+            "2018-11-03 11:36:28.607339",
+            "2018-11-03 11:36:28.607388",
+            "2018-11-03 11:36:28.607391",
+            "2018-11-03 11:36:28.607442"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-11-03",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "UDP.csv",
+          "raw_samples": [
+            "2018-11-03 10:42:57.176671",
+            "2018-11-03 10:42:57.176673",
+            "2018-11-03 10:42:57.176727",
+            "2018-11-03 10:42:57.176729",
+            "2018-11-03 10:42:57.177121"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-11-03",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "UDPLag.csv",
+          "raw_samples": [
+            "2018-11-03 11:01:43.652742",
+            "2018-11-03 11:01:43.653107",
+            "2018-11-03 11:01:43.653383",
+            "2018-11-03 11:01:43.653386",
+            "2018-11-03 11:01:43.653387"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-11-03",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        }
+      ],
+      "example_raw_timestamp": "2018-11-03 10:09:00.565557",
+      "parses_as": {
+        "%Y-%m-%d %H:%M:%S.%f": "2018-11-03"
+      }
+    },
+    {
+      "day": "CSV-01-12",
+      "server_path": "/opt/CIC-DDoS2019/CSV-01-12",
+      "files": [
+        "DrDoS_DNS.csv",
+        "DrDoS_LDAP.csv",
+        "DrDoS_MSSQL.csv",
+        "DrDoS_NTP.csv",
+        "DrDoS_NetBIOS.csv",
+        "DrDoS_SNMP.csv",
+        "DrDoS_SSDP.csv",
+        "DrDoS_UDP.csv",
+        "Syn.csv",
+        "TFTP.csv",
+        "UDPLag.csv"
+      ],
+      "timestamp_evidence": [
+        {
+          "file": "DrDoS_DNS.csv",
+          "raw_samples": [
+            "2018-12-01 10:51:39.813448",
+            "2018-12-01 10:51:39.820842",
+            "2018-12-01 10:51:39.852499",
+            "2018-12-01 10:51:39.890213",
+            "2018-12-01 10:51:39.941151"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "DrDoS_LDAP.csv",
+          "raw_samples": [
+            "2018-12-01 11:22:40.254769",
+            "2018-12-01 11:22:40.255361",
+            "2018-12-01 11:22:40.255568",
+            "2018-12-01 11:22:40.256113",
+            "2018-12-01 11:22:40.256285"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "DrDoS_MSSQL.csv",
+          "raw_samples": [
+            "2018-12-01 11:32:32.915441",
+            "2018-12-01 11:32:32.915442",
+            "2018-12-01 11:32:32.915578",
+            "2018-12-01 11:32:32.915773",
+            "2018-12-01 11:32:32.916114"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "DrDoS_NTP.csv",
+          "raw_samples": [
+            "2018-12-01 09:17:11.183810",
+            "2018-12-01 09:17:11.205636",
+            "2018-12-01 09:17:12.634569",
+            "2018-12-01 09:17:13.458370",
+            "2018-12-01 09:17:13.470913"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "DrDoS_NetBIOS.csv",
+          "raw_samples": [
+            "2018-12-01 11:47:08.463789",
+            "2018-12-01 11:47:08.464316",
+            "2018-12-01 11:47:08.464472",
+            "2018-12-01 11:47:08.464520",
+            "2018-12-01 11:47:08.464925"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "DrDoS_SNMP.csv",
+          "raw_samples": [
+            "2018-12-01 12:00:13.902782",
+            "2018-12-01 12:00:13.902785",
+            "2018-12-01 12:00:13.903230",
+            "2018-12-01 12:00:13.903311",
+            "2018-12-01 12:00:13.903490"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "DrDoS_SSDP.csv",
+          "raw_samples": [
+            "2018-12-01 12:23:13.663425",
+            "2018-12-01 12:23:13.663475",
+            "2018-12-01 12:23:13.663526",
+            "2018-12-01 12:23:13.663622",
+            "2018-12-01 12:23:13.663844"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "DrDoS_UDP.csv",
+          "raw_samples": [
+            "2018-12-01 12:36:57.628026",
+            "2018-12-01 12:36:57.628076",
+            "2018-12-01 12:36:57.628164",
+            "2018-12-01 12:36:57.628166",
+            "2018-12-01 12:36:57.628217"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "Syn.csv",
+          "raw_samples": [
+            "2018-12-01 13:30:30.741451",
+            "2018-12-01 13:30:30.741452",
+            "2018-12-01 13:30:30.741501",
+            "2018-12-01 13:30:30.741563",
+            "2018-12-01 13:30:30.741565"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "TFTP.csv",
+          "raw_samples": [
+            "2018-12-01 13:34:27.403713",
+            "2018-12-01 13:34:27.404124",
+            "2018-12-01 13:34:27.404125",
+            "2018-12-01 13:34:27.404177",
+            "2018-12-01 13:34:27.404228"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        },
+        {
+          "file": "UDPLag.csv",
+          "raw_samples": [
+            "2018-12-01 13:04:45.928673",
+            "2018-12-01 13:04:45.928913",
+            "2018-12-01 13:04:45.928915",
+            "2018-12-01 13:04:45.929024",
+            "2018-12-01 13:04:45.929096"
+          ],
+          "distinct_date_prefixes": [
+            [
+              "2018-12-01",
+              20000
+            ]
+          ],
+          "rows_inspected": 20000
+        }
+      ],
+      "example_raw_timestamp": "2018-12-01 10:51:39.813448",
+      "parses_as": {
+        "%Y-%m-%d %H:%M:%S.%f": "2018-12-01"
+      }
+    }
+  ],
+  "cache": {
+    "server_path": "/opt/ids_revision/v4_deep_baseline/cache/cicddos2019.npz",
+    "sha256": "f30538b908ed4dd7dcf58847db7e309b1ff1ca27574811d8a25339c0469d4228",
+    "bytes": 17480447
+  },
+  "runs": [
+    {
+      "seed": 42,
+      "server_path": "/opt/ids_revision/v4_deep_baseline/ddos_results/cicddos2019/seed42/metrics.json",
+      "sha256": "84eec80baf09c014a741a46af0a9698a1e0aeb3bc4b581dfee8ad63a10958429",
+      "bytes": 144640,
+      "original_features": 68,
+      "classifier_features_after_onehot": 68,
+      "sub_train": 225000,
+      "validation": 25000,
+      "official_test": 250000
+    },
+    {
+      "seed": 123,
+      "server_path": "/opt/ids_revision/v4_deep_baseline/ddos_results/cicddos2019/seed123/metrics.json",
+      "sha256": "504df454d467985f2b62dc53573cfc1837cfcdcaa8989a5c521bd9b0b392b0f4",
+      "bytes": 144412,
+      "original_features": 68,
+      "classifier_features_after_onehot": 68,
+      "sub_train": 225000,
+      "validation": 25000,
+      "official_test": 250000
+    },
+    {
+      "seed": 456,
+      "server_path": "/opt/ids_revision/v4_deep_baseline/ddos_results/cicddos2019/seed456/metrics.json",
+      "sha256": "6de8a1ecabc7fd9d80b35e77be161ee13bf9d2950b7c2bd0d273029117117742",
+      "bytes": 144496,
+      "original_features": 68,
+      "classifier_features_after_onehot": 68,
+      "sub_train": 225000,
+      "validation": 25000,
+      "official_test": 250000
+    }
+  ],
+  "feature_dimension_consistent": true,
+  "feature_dimension_values": [
+    68
+  ]
+}

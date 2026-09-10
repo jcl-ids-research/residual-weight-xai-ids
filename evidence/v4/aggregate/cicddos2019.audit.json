@@ -1,0 +1,332 @@
+{
+  "cap_seed": 20260902,
+  "train": {
+    "day": "CSV-03-11",
+    "capture_date": "2018-11-03",
+    "full_period_rows": 20364525,
+    "full_label_counts": {
+      "NetBIOS": 3657497,
+      "BENIGN": 56965,
+      "LDAP": 1915122,
+      "MSSQL": 5787453,
+      "Portmap": 186960,
+      "Syn": 4891500,
+      "UDP": 3867155,
+      "UDPLag": 1873
+    },
+    "sampled_rows": 250000,
+    "sampled_attack_rate": 0.997204,
+    "full_attack_rate": 0.9972027336753496,
+    "attack_labels": [
+      "LDAP",
+      "MSSQL",
+      "NetBIOS",
+      "Portmap",
+      "Syn",
+      "UDP",
+      "UDPLag"
+    ],
+    "sampling_method": "proportional stratified over (file, label) cells; largest-remainder quotas; uniform draw within each cell",
+    "per_file_sampling_rate": {
+      "LDAP.csv": 0.01227644,
+      "MSSQL.csv": 0.01227625,
+      "NetBIOS.csv": 0.01227611,
+      "Portmap.csv": 0.01227477,
+      "Syn.csv": 0.01227624,
+      "UDP.csv": 0.01227617,
+      "UDPLag.csv": 0.01227721
+    },
+    "family_fidelity": {
+      "MSSQL": {
+        "full_share": 0.28419288,
+        "sampled_share": 0.284192,
+        "shift_pp": -8.8e-05
+      },
+      "Syn": {
+        "full_share": 0.24019711,
+        "sampled_share": 0.2402,
+        "shift_pp": 0.000289
+      },
+      "UDP": {
+        "full_share": 0.18989665,
+        "sampled_share": 0.189896,
+        "shift_pp": -6.5e-05
+      },
+      "NetBIOS": {
+        "full_share": 0.17960139,
+        "sampled_share": 0.1796,
+        "shift_pp": -0.000139
+      },
+      "LDAP": {
+        "full_share": 0.09404207,
+        "sampled_share": 0.094044,
+        "shift_pp": 0.000193
+      },
+      "Portmap": {
+        "full_share": 0.00918067,
+        "sampled_share": 0.00918,
+        "shift_pp": -6.7e-05
+      },
+      "BENIGN": {
+        "full_share": 0.00279727,
+        "sampled_share": 0.002796,
+        "shift_pp": -0.000127
+      },
+      "UDPLag": {
+        "full_share": 9.197e-05,
+        "sampled_share": 9.2e-05,
+        "shift_pp": 3e-06
+      }
+    },
+    "max_family_shift_pp": 0.000289,
+    "sampled_label_counts": {
+      "MSSQL": 71048,
+      "Syn": 60050,
+      "UDP": 47474,
+      "NetBIOS": 44900,
+      "LDAP": 23511,
+      "Portmap": 2295,
+      "BENIGN": 699,
+      "UDPLag": 23
+    }
+  },
+  "test": {
+    "day": "CSV-01-12",
+    "capture_date": "2018-12-01",
+    "full_period_rows": 50063112,
+    "full_label_counts": {
+      "DrDoS_DNS": 5071011,
+      "BENIGN": 56863,
+      "DrDoS_LDAP": 2179930,
+      "DrDoS_MSSQL": 4522492,
+      "DrDoS_NTP": 1202642,
+      "DrDoS_NetBIOS": 4093279,
+      "DrDoS_SNMP": 5159870,
+      "DrDoS_SSDP": 2610611,
+      "DrDoS_UDP": 3134645,
+      "Syn": 1582289,
+      "TFTP": 20082580,
+      "UDP-lag": 366461,
+      "WebDDoS": 439
+    },
+    "sampled_rows": 250000,
+    "sampled_attack_rate": 0.998864,
+    "full_attack_rate": 0.9988641736854074,
+    "attack_labels": [
+      "DrDoS_DNS",
+      "DrDoS_LDAP",
+      "DrDoS_MSSQL",
+      "DrDoS_NTP",
+      "DrDoS_NetBIOS",
+      "DrDoS_SNMP",
+      "DrDoS_SSDP",
+      "DrDoS_UDP",
+      "Syn",
+      "TFTP",
+      "UDP-lag",
+      "WebDDoS"
+    ],
+    "sampling_method": "proportional stratified over (file, label) cells; largest-remainder quotas; uniform draw within each cell",
+    "per_file_sampling_rate": {
+      "DrDoS_DNS.csv": 0.00499368,
+      "DrDoS_LDAP.csv": 0.00499372,
+      "DrDoS_MSSQL.csv": 0.0049937,
+      "DrDoS_NTP.csv": 0.00499422,
+      "DrDoS_NetBIOS.csv": 0.00499367,
+      "DrDoS_SNMP.csv": 0.00499382,
+      "DrDoS_SSDP.csv": 0.00499392,
+      "DrDoS_UDP.csv": 0.00499362,
+      "Syn.csv": 0.00499343,
+      "TFTP.csv": 0.00499368,
+      "UDPLag.csv": 0.00499184
+    },
+    "family_fidelity": {
+      "TFTP": {
+        "full_share": 0.40114526,
+        "sampled_share": 0.401144,
+        "shift_pp": -0.000126
+      },
+      "DrDoS_SNMP": {
+        "full_share": 0.1030673,
+        "sampled_share": 0.103068,
+        "shift_pp": 7e-05
+      },
+      "DrDoS_DNS": {
+        "full_share": 0.10129236,
+        "sampled_share": 0.101292,
+        "shift_pp": -3.6e-05
+      },
+      "DrDoS_MSSQL": {
+        "full_share": 0.09033581,
+        "sampled_share": 0.090336,
+        "shift_pp": 1.9e-05
+      },
+      "DrDoS_NetBIOS": {
+        "full_share": 0.08176238,
+        "sampled_share": 0.081764,
+        "shift_pp": 0.000162
+      },
+      "DrDoS_UDP": {
+        "full_share": 0.06261387,
+        "sampled_share": 0.062612,
+        "shift_pp": -0.000187
+      },
+      "DrDoS_SSDP": {
+        "full_share": 0.0521464,
+        "sampled_share": 0.052148,
+        "shift_pp": 0.00016
+      },
+      "DrDoS_LDAP": {
+        "full_share": 0.04354364,
+        "sampled_share": 0.043544,
+        "shift_pp": 3.6e-05
+      },
+      "Syn": {
+        "full_share": 0.03160589,
+        "sampled_share": 0.031604,
+        "shift_pp": -0.000189
+      },
+      "DrDoS_NTP": {
+        "full_share": 0.02402252,
+        "sampled_share": 0.024024,
+        "shift_pp": 0.000148
+      },
+      "UDP-lag": {
+        "full_share": 0.00731998,
+        "sampled_share": 0.00732,
+        "shift_pp": 2e-06
+      },
+      "BENIGN": {
+        "full_share": 0.00113583,
+        "sampled_share": 0.001136,
+        "shift_pp": 1.7e-05
+      },
+      "WebDDoS": {
+        "full_share": 8.77e-06,
+        "sampled_share": 8e-06,
+        "shift_pp": -7.7e-05
+      }
+    },
+    "max_family_shift_pp": 0.000189,
+    "sampled_label_counts": {
+      "TFTP": 100286,
+      "DrDoS_SNMP": 25767,
+      "DrDoS_DNS": 25323,
+      "DrDoS_MSSQL": 22584,
+      "DrDoS_NetBIOS": 20441,
+      "DrDoS_UDP": 15653,
+      "DrDoS_SSDP": 13037,
+      "DrDoS_LDAP": 10886,
+      "Syn": 7901,
+      "DrDoS_NTP": 6006,
+      "UDP-lag": 1830,
+      "BENIGN": 284,
+      "WebDDoS": 2
+    }
+  },
+  "features": [
+    "Destination Port",
+    "Protocol",
+    "Flow Duration",
+    "Total Fwd Packets",
+    "Total Backward Packets",
+    "Total Length of Fwd Packets",
+    "Total Length of Bwd Packets",
+    "Fwd Packet Length Max",
+    "Fwd Packet Length Min",
+    "Fwd Packet Length Mean",
+    "Fwd Packet Length Std",
+    "Bwd Packet Length Max",
+    "Bwd Packet Length Min",
+    "Bwd Packet Length Mean",
+    "Bwd Packet Length Std",
+    "Flow Bytes/s",
+    "Flow Packets/s",
+    "Flow IAT Mean",
+    "Flow IAT Std",
+    "Flow IAT Max",
+    "Flow IAT Min",
+    "Fwd IAT Total",
+    "Fwd IAT Mean",
+    "Fwd IAT Std",
+    "Fwd IAT Max",
+    "Fwd IAT Min",
+    "Bwd IAT Total",
+    "Bwd IAT Mean",
+    "Bwd IAT Std",
+    "Bwd IAT Max",
+    "Bwd IAT Min",
+    "Fwd PSH Flags",
+    "Bwd PSH Flags",
+    "Fwd URG Flags",
+    "Bwd URG Flags",
+    "Fwd Header Length",
+    "Bwd Header Length",
+    "Fwd Packets/s",
+    "Bwd Packets/s",
+    "Min Packet Length",
+    "Max Packet Length",
+    "Packet Length Mean",
+    "Packet Length Std",
+    "Packet Length Variance",
+    "FIN Flag Count",
+    "SYN Flag Count",
+    "RST Flag Count",
+    "PSH Flag Count",
+    "ACK Flag Count",
+    "URG Flag Count",
+    "CWE Flag Count",
+    "ECE Flag Count",
+    "Down/Up Ratio",
+    "Average Packet Size",
+    "Avg Fwd Segment Size",
+    "Avg Bwd Segment Size",
+    "Fwd Header Length.1",
+    "Fwd Avg Bytes/Bulk",
+    "Fwd Avg Packets/Bulk",
+    "Fwd Avg Bulk Rate",
+    "Bwd Avg Bytes/Bulk",
+    "Bwd Avg Packets/Bulk",
+    "Bwd Avg Bulk Rate",
+    "Subflow Fwd Packets",
+    "Subflow Fwd Bytes",
+    "Subflow Bwd Packets",
+    "Subflow Bwd Bytes",
+    "Init_Win_bytes_forward",
+    "Init_Win_bytes_backward",
+    "act_data_pkt_fwd",
+    "min_seg_size_forward",
+    "Active Mean",
+    "Active Std",
+    "Active Max",
+    "Active Min",
+    "Idle Mean",
+    "Idle Std",
+    "Idle Max",
+    "Idle Min",
+    "Inbound"
+  ],
+  "feature_count": 80,
+  "test_only_attack_labels": [
+    "DrDoS_DNS",
+    "DrDoS_LDAP",
+    "DrDoS_MSSQL",
+    "DrDoS_NTP",
+    "DrDoS_NetBIOS",
+    "DrDoS_SNMP",
+    "DrDoS_SSDP",
+    "DrDoS_UDP",
+    "TFTP",
+    "UDP-lag",
+    "WebDDoS"
+  ],
+  "dropped_identity_columns": [
+    "destination ip",
+    "flow id",
+    "simillarhttp",
+    "source ip",
+    "source port",
+    "timestamp",
+    "unnamed: 0"
+  ]
+}

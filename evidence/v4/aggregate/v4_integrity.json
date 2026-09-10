@@ -1,0 +1,264 @@
+{
+  "run_count": 23,
+  "file_count": 23,
+  "total_bytes": 476063,
+  "completeness": {
+    "unsw": {
+      "expected": [
+        42,
+        123,
+        456,
+        789,
+        1001,
+        2024,
+        31415,
+        65537,
+        77777,
+        99991
+      ],
+      "present": [
+        42,
+        123,
+        456,
+        789,
+        1001,
+        2024,
+        31415,
+        65537,
+        77777,
+        99991
+      ],
+      "missing": [],
+      "complete": true
+    },
+    "nslkdd": {
+      "expected": [
+        42,
+        123,
+        456,
+        789,
+        1001,
+        2024,
+        31415,
+        65537,
+        77777,
+        99991
+      ],
+      "present": [
+        42,
+        123,
+        456,
+        789,
+        1001,
+        2024,
+        31415,
+        65537,
+        77777,
+        99991
+      ],
+      "missing": [],
+      "complete": true
+    },
+    "cicids2017": {
+      "expected": [
+        42,
+        123,
+        456
+      ],
+      "present": [
+        42,
+        123,
+        456
+      ],
+      "missing": [],
+      "complete": true
+    }
+  },
+  "all_complete": true,
+  "files": [
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/cicids2017/seed123/metrics.json",
+      "bytes": 8151,
+      "sha256": "e842220322a46bc41421f7a7e6f87f6e675f17280104b5915e3a67d15610e064",
+      "dataset": "cicids2017",
+      "seed": 123,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/cicids2017/seed42/metrics.json",
+      "bytes": 8140,
+      "sha256": "b33b7e8bb7a73f0ac3f5ce9ee1a0ac271671f1fa7f4bdf2cc061715cc77537e9",
+      "dataset": "cicids2017",
+      "seed": 42,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/cicids2017/seed456/metrics.json",
+      "bytes": 8137,
+      "sha256": "37dd232cad76d1fb42b9f933a6aebb2f202e0aea32cf8e3f328eef9cfb955ee9",
+      "dataset": "cicids2017",
+      "seed": 456,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed1001/metrics.json",
+      "bytes": 11343,
+      "sha256": "96a98db83bb31f0e1f592f00b54cdb45ecfc6412343c58cb9509ab78e38a33e0",
+      "dataset": "nslkdd",
+      "seed": 1001,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed123/metrics.json",
+      "bytes": 22097,
+      "sha256": "f1ad08d666bdd1819ab11835078d2b6a64d2c1ad2854a0b74016dff9635eebed",
+      "dataset": "nslkdd",
+      "seed": 123,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed2024/metrics.json",
+      "bytes": 11313,
+      "sha256": "bdc2af88c0d516506ceb2330e9844f504eb6898ca3a20f4730a0657f0e9092c8",
+      "dataset": "nslkdd",
+      "seed": 2024,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed31415/metrics.json",
+      "bytes": 11324,
+      "sha256": "efb2bd333080679870a007dbbb16180989ed05d117923004619d4e5d567c306d",
+      "dataset": "nslkdd",
+      "seed": 31415,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed42/metrics.json",
+      "bytes": 22095,
+      "sha256": "67f15de95b6d24cd63f1c140555a1410242b5cfc79cc80c65e4d69b3438eafd5",
+      "dataset": "nslkdd",
+      "seed": 42,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed456/metrics.json",
+      "bytes": 11337,
+      "sha256": "73f7f29daa4d9019b6b6f446da9a09e9f98d8964453e2429193fae4d575fc5c7",
+      "dataset": "nslkdd",
+      "seed": 456,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed65537/metrics.json",
+      "bytes": 11355,
+      "sha256": "4efd8987367c5cf781dcf7126e0fe224250ee1c521a8c9eef2c3a9fe06be16ce",
+      "dataset": "nslkdd",
+      "seed": 65537,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed77777/metrics.json",
+      "bytes": 11347,
+      "sha256": "7513d7863bd662d361b85df520e653ff426530939a6a357c2c1ddbdc55633dcd",
+      "dataset": "nslkdd",
+      "seed": 77777,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed789/metrics.json",
+      "bytes": 11346,
+      "sha256": "8bc786fe3aa11bc6be33b8d0c947e69a5c96c76beacd2e97a73a9e18333440f5",
+      "dataset": "nslkdd",
+      "seed": 789,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/nslkdd/seed99991/metrics.json",
+      "bytes": 11335,
+      "sha256": "e5a2a014811d62054348a11994bfdce844a182789f4d1d1e79d826a79b989284",
+      "dataset": "nslkdd",
+      "seed": 99991,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed1001/metrics.json",
+      "bytes": 37099,
+      "sha256": "688c196cb8ea863f09b443942850bec9420c590c42f5c70c0fa36da5066c0c20",
+      "dataset": "unsw",
+      "seed": 1001,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed123/metrics.json",
+      "bytes": 37159,
+      "sha256": "ea85a7313f99e4a4ae706fe6a36c0cb6888e03c876ee8d69722fc04b27a38c8e",
+      "dataset": "unsw",
+      "seed": 123,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed2024/metrics.json",
+      "bytes": 37141,
+      "sha256": "2c684631bb50298d68a6082dd578b97e7baca47fb55f568d364c40fd3bde3c9b",
+      "dataset": "unsw",
+      "seed": 2024,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed31415/metrics.json",
+      "bytes": 37085,
+      "sha256": "3dd0b0590d00c81bd7e4b062fdd0886a686545703765c513af3fba050ab5f5d5",
+      "dataset": "unsw",
+      "seed": 31415,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed42/metrics.json",
+      "bytes": 37104,
+      "sha256": "1e12c62993eb517f3830427a0f9e153cb032112e44e1d701ded65bab751e83e3",
+      "dataset": "unsw",
+      "seed": 42,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed456/metrics.json",
+      "bytes": 37120,
+      "sha256": "0bbc081742cb6579dbe86c975467daabd5fec9ca2c624b46de54fdd2c77d15a3",
+      "dataset": "unsw",
+      "seed": 456,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed65537/metrics.json",
+      "bytes": 18939,
+      "sha256": "45bfe434bbbb1c55e347d8adb4e5df5e752de8302d59e46c2814b04ed6e4f19d",
+      "dataset": "unsw",
+      "seed": 65537,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed77777/metrics.json",
+      "bytes": 18952,
+      "sha256": "ba16f624ee27e6a2f66ad17a21901e5cdff487863dbc8ab9af8e85c0fa2d7e6e",
+      "dataset": "unsw",
+      "seed": 77777,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed789/metrics.json",
+      "bytes": 37193,
+      "sha256": "1ecbe865da7585c1a6f063d16d01a208484b19f2f6c4fbe7b09a3a618550b91e",
+      "dataset": "unsw",
+      "seed": 789,
+      "device": "cuda"
+    },
+    {
+      "path": "/opt/ids_revision/v4_deep_baseline/results/unsw/seed99991/metrics.json",
+      "bytes": 18951,
+      "sha256": "3b7594a6152aafa4699b4dd89b78633f11f1478b14cf679690ffc62d22c7dc4d",
+      "dataset": "unsw",
+      "seed": 99991,
+      "device": "cuda"
+    }
+  ]
+}

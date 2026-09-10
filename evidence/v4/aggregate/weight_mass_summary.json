@@ -1,0 +1,121 @@
+{
+  "unsw": {
+    "seeds": 10,
+    "class_names": [
+      "Analysis",
+      "Backdoor",
+      "DoS",
+      "Exploits",
+      "Fuzzers",
+      "Generic",
+      "Normal",
+      "Reconnaissance",
+      "Shellcode",
+      "Worms"
+    ],
+    "most_over_weighted_class": "Shellcode",
+    "original_ratio": {
+      "mean": 17.95774709231586,
+      "sample_sd": 0.08317131817972326
+    },
+    "original_relative_spread": {
+      "mean": 0.9831781382872165,
+      "sample_sd": 0.0006051710333180356
+    },
+    "residual_ratio": {
+      "mean": 1.0000003664142751,
+      "sample_sd": 5.507482852965949e-08
+    },
+    "residual_relative_spread": {
+      "mean": 1.075692417430719e-07,
+      "sample_sd": 1.6118703642708455e-08
+    },
+    "original_minimum": {
+      "mean": 2892.7650634765623,
+      "sample_sd": 7.790232611457605
+    },
+    "original_maximum": {
+      "mean": 51947.466796875,
+      "sample_sd": 261.4157977314205
+    },
+    "residual_level": {
+      "mean": 18655.60001953125,
+      "sample_sd": 10.8827617066551
+    }
+  },
+  "nslkdd": {
+    "seeds": 10,
+    "class_names": [
+      "Normal",
+      "DoS",
+      "Probe",
+      "R2L",
+      "U2R"
+    ],
+    "most_over_weighted_class": "R2L",
+    "original_ratio": {
+      "mean": 14.98116642179798,
+      "sample_sd": 0.004808582147102058
+    },
+    "original_relative_spread": {
+      "mean": 0.9755662081963508,
+      "sample_sd": 0.0006593422352938781
+    },
+    "residual_ratio": {
+      "mean": 1.0000003523258734,
+      "sample_sd": 1.369672643796328e-07
+    },
+    "residual_relative_spread": {
+      "mean": 1.2295630307555348e-07,
+      "sample_sd": 4.427094303458122e-08
+    },
+    "original_minimum": {
+      "mean": 4100.3424072265625,
+      "sample_sd": 11.654045265356698
+    },
+    "original_maximum": {
+      "mean": 61427.9234375,
+      "sample_sd": 180.10227801651862
+    },
+    "residual_level": {
+      "mean": 27717.9588671875,
+      "sample_sd": 2.574676329054689
+    }
+  },
+  "cicids2017": {
+    "seeds": 3,
+    "class_names": [
+      "BENIGN",
+      "ATTACK"
+    ],
+    "most_over_weighted_class": "ATTACK",
+    "original_ratio": {
+      "mean": 3.9560728867001305,
+      "sample_sd": 0.00018744450318771935
+    },
+    "original_relative_spread": {
+      "mean": 0.5964546834502044,
+      "sample_sd": 1.5262626575776266e-05
+    },
+    "residual_ratio": {
+      "mean": 1.0000002361724407,
+      "sample_sd": 5.84360802271306e-08
+    },
+    "residual_relative_spread": {
+      "mean": 1.1808620584655786e-07,
+      "sample_sd": 2.9218032710687418e-08
+    },
+    "original_minimum": {
+      "mean": 62295.91015625,
+      "sample_sd": 2.695881393766761
+    },
+    "original_maximum": {
+      "mean": 246447.16145833334,
+      "sample_sd": 22.342069065559
+    },
+    "residual_level": {
+      "mean": 154371.54427083334,
+      "sample_sd": 12.514065166270994
+    }
+  }
+}

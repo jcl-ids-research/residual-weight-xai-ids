@@ -1,0 +1,65 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "residual-weight-xai-ids"
+version = "1.0.0"
+description = "Verification package for residual class weighting in explainable network intrusion detection"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+
+# Pinned to the interpreter and library versions recorded in the published
+# per-seed metrics, so a reviewer reproduces the same numbers rather than
+# whatever the latest release happens to compute.
+dependencies = [
+  "numpy==1.26.4",
+  "pandas==2.3.3",
+  "scikit-learn==1.7.2",
+  "imbalanced-learn==0.14.2",
+  "xgboost==3.2.0",
+  "matplotlib>=3.8,<4",
+  "python-docx>=1.1,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<9", "ruff>=0.8,<1"]
+
+[project.scripts]
+rwxai = "rwxai.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+# Files copied verbatim from the experiment server are excluded from linting.
+# Their SHA-256 values are what prove the published numbers came from that
+# exact code, so a formatting fix here would silently break provenance.
+extend-exclude = [
+  "server_snapshot",
+  "src/rwxai/aggregate_v3_results.py",
+  "src/rwxai/aggregate_v4_results.py",
+  "src/rwxai/analyze_ddos2019.py",
+  "src/rwxai/collect_ddos2019_evidence.py",
+  "src/rwxai/crosscheck_layers.py",
+  "src/rwxai/diagnose_ddos_sampling.py",
+  "src/rwxai/extract_weight_mass.py",
+  "src/rwxai/prepare_cicddos2019_cache.py",
+  "src/rwxai/run_v3_explainable.py",
+  "src/rwxai/run_v4_deep_baseline.py",
+  "src/rwxai/v3_data.py",
+  "src/rwxai/make_v4_figures.py",
+  "src/rwxai/make_weight_mass_figure.py",
+  "src/rwxai/make_workflow_figure.py",
+]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]

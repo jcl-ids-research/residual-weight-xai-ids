@@ -1,0 +1,778 @@
+{
+  "host": "sjtu-a100",
+  "collected_at": "2026-09-07T10:19:43+08:00",
+  "datasets": {
+    "unsw": {
+      "raw_files": 1,
+      "raw_example": "/opt/UNSW-NB15/UNSW_NB15_training-set.csv",
+      "raw_column_count": 45,
+      "cache": null,
+      "run": {
+        "seed_count": 10,
+        "seeds": [
+          {
+            "seed": 1001,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed1001/metrics.json",
+            "sha256": "14073cdfd7dc3b906b09500c3beaf7c34b45377da7bdca5c5f39e1d0ba4f90a5",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 123,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed123/metrics.json",
+            "sha256": "63ac8ec1ecdeba0ecb1c9dcbba2ea85055992de540b8111db5c4384420cc42c0",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 2024,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed2024/metrics.json",
+            "sha256": "34414dd4cbf33561156ca7a7d3ae46772bf16d9fe763e26d47a0d015c4c96cf6",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 31415,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed31415/metrics.json",
+            "sha256": "81056480186827882597f2a2a0725c5d450fdabbc82a769fcc7979e6e3a851f7",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 42,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed42/metrics.json",
+            "sha256": "c5fae2f686e1624d99ccc04123e8aa4eaf4e7d42c8098cc3cb23b0be21f76452",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 456,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed456/metrics.json",
+            "sha256": "22a29e61ecb13e004bcf07a2a3fb6c0d1bf3bfaee599a9689b87e24dedde8855",
+            "original_features": 42,
+            "classifier_features_after_onehot": 192,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 65537,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed65537/metrics.json",
+            "sha256": "759f4e1fcb5ee84df0418d3fd881b344ca5ffcfcf064de201282f2d88de09967",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 77777,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed77777/metrics.json",
+            "sha256": "bff522cf3dac0977353739ba2f96daeed146020be00b754ba26a89d1d361a01a",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 789,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed789/metrics.json",
+            "sha256": "f1d369e3402fc90679bef2e449dffea20c085a6cc30f750c43a7279f7ad03bc9",
+            "original_features": 42,
+            "classifier_features_after_onehot": 194,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 99991,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/unsw/seed99991/metrics.json",
+            "sha256": "b8291a3e33f79becaf93202ba8c48f2cc1cad6e3dba041ef9584092279a7d215",
+            "original_features": 42,
+            "classifier_features_after_onehot": 193,
+            "official_test_set_untouched": true
+          }
+        ],
+        "feature_names": [
+          "dur",
+          "spkts",
+          "dpkts",
+          "sbytes",
+          "dbytes",
+          "rate",
+          "sttl",
+          "dttl",
+          "sload",
+          "dload",
+          "sloss",
+          "dloss",
+          "sinpkt",
+          "dinpkt",
+          "sjit",
+          "djit",
+          "swin",
+          "stcpb",
+          "dtcpb",
+          "dwin",
+          "tcprtt",
+          "synack",
+          "ackdat",
+          "smean",
+          "dmean",
+          "trans_depth",
+          "response_body_len",
+          "ct_srv_src",
+          "ct_state_ttl",
+          "ct_dst_ltm",
+          "ct_src_dport_ltm",
+          "ct_dst_sport_ltm",
+          "ct_dst_src_ltm",
+          "is_ftp_login",
+          "ct_ftp_cmd",
+          "ct_flw_http_mthd",
+          "ct_src_ltm",
+          "ct_srv_dst",
+          "is_sm_ips_ports",
+          "proto",
+          "service",
+          "state"
+        ],
+        "original_features": [
+          42
+        ],
+        "classifier_features_after_onehot": [
+          192,
+          193,
+          194
+        ],
+        "dimension_consistent": true
+      },
+      "accounting": {
+        "raw_columns": 45,
+        "target_columns": [
+          "attack_cat",
+          "label"
+        ],
+        "identifier_columns": [
+          "id"
+        ],
+        "constant_columns": [],
+        "constant_evidence": {},
+        "unexplained": [],
+        "features_used": 42,
+        "balances": true
+      }
+    },
+    "nslkdd": {
+      "raw_files": 1,
+      "raw_example": "/opt/NSL-KDD/KDDTrain+.txt",
+      "raw_column_count": 43,
+      "cache": null,
+      "run": {
+        "seed_count": 10,
+        "seeds": [
+          {
+            "seed": 1001,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed1001/metrics.json",
+            "sha256": "c7c395bd6bcd3e62dd454dd3eb8578e05527422dc7a400d38bc0b479fc1bf5d7",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 123,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed123/metrics.json",
+            "sha256": "7fcc4a8800e6dfc35c7d98da6ff3610aa8fecda25997ee45ee7a560b1fcea290",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 2024,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed2024/metrics.json",
+            "sha256": "597c82d5e9e061a3339e8ba4b297a81d34b3b96afc261355be9c449238915d3b",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 31415,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed31415/metrics.json",
+            "sha256": "66eb1816da0375feb58214a70a5a09a9347ec0334cc85138bd650b3d44288965",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 42,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed42/metrics.json",
+            "sha256": "5155f52bc6d8aeb043af1426e5c9f284ab5ab47186a3d87cd8dfab2e30cb62e6",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 456,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed456/metrics.json",
+            "sha256": "17bae704deb58beedbb671a3a4980325f2b0e8924f7ba22c0e11bbfaf8ca4415",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 65537,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed65537/metrics.json",
+            "sha256": "bce59d7bf2e2f50508c1d3d0e1bb6606ec91cfe0e47a1d03adeede46303b69a3",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 77777,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed77777/metrics.json",
+            "sha256": "5d20cd09149acc0c74391d6128d203b9dd42be0198abbd02a65d27bede4757ee",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 789,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed789/metrics.json",
+            "sha256": "e7b0949236934a9851965e9e5f0a373387135bbd1fdfe65d31d102d37d0e5950",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 99991,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/nslkdd/seed99991/metrics.json",
+            "sha256": "37c723e066574184f07ce1683bd94d5460ac20b26a39afdab365fef3feda9d0b",
+            "original_features": 40,
+            "classifier_features_after_onehot": 121,
+            "official_test_set_untouched": true
+          }
+        ],
+        "feature_names": [
+          "duration",
+          "src_bytes",
+          "dst_bytes",
+          "land",
+          "wrong_fragment",
+          "urgent",
+          "hot",
+          "num_failed_logins",
+          "logged_in",
+          "num_compromised",
+          "root_shell",
+          "su_attempted",
+          "num_root",
+          "num_file_creations",
+          "num_shells",
+          "num_access_files",
+          "is_host_login",
+          "is_guest_login",
+          "count",
+          "srv_count",
+          "serror_rate",
+          "srv_serror_rate",
+          "rerror_rate",
+          "srv_rerror_rate",
+          "same_srv_rate",
+          "diff_srv_rate",
+          "srv_diff_host_rate",
+          "dst_host_count",
+          "dst_host_srv_count",
+          "dst_host_same_srv_rate",
+          "dst_host_diff_srv_rate",
+          "dst_host_same_src_port_rate",
+          "dst_host_srv_diff_host_rate",
+          "dst_host_serror_rate",
+          "dst_host_srv_serror_rate",
+          "dst_host_rerror_rate",
+          "dst_host_srv_rerror_rate",
+          "protocol_type",
+          "service",
+          "flag"
+        ],
+        "original_features": [
+          40
+        ],
+        "classifier_features_after_onehot": [
+          121
+        ],
+        "dimension_consistent": true
+      },
+      "accounting": {
+        "raw_columns": 43,
+        "target_columns": [
+          "label",
+          "difficulty"
+        ],
+        "identifier_columns": [],
+        "constant_columns": [
+          "num_outbound_cmds"
+        ],
+        "constant_evidence": {
+          "num_outbound_cmds": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 125973
+          }
+        },
+        "unexplained": [],
+        "features_used": 40,
+        "balances": true
+      }
+    },
+    "cicids2017": {
+      "raw_files": 8,
+      "raw_example": "/opt/CIC-IDS-2017/MachineLearningCVE/Friday-WorkingHours-Afternoon-DDos.pcap_ISCX.csv",
+      "raw_column_count": 79,
+      "cache": null,
+      "run": {
+        "seed_count": 3,
+        "seeds": [
+          {
+            "seed": 123,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/cicids2017/seed123/metrics.json",
+            "sha256": "4e36c2daabba6eefbefdc6d413430f92aec5a912a35edbf39fea7250b4f17637",
+            "original_features": 70,
+            "classifier_features_after_onehot": 70,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 42,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/cicids2017/seed42/metrics.json",
+            "sha256": "69041c30a5057445aa6a8f5b724f45f9050a1ea72f07bd826c17bff8aab13d84",
+            "original_features": 70,
+            "classifier_features_after_onehot": 70,
+            "official_test_set_untouched": true
+          },
+          {
+            "seed": 456,
+            "server_path": "/opt/ids_revision/v3_strengthened/results/cicids2017/seed456/metrics.json",
+            "sha256": "3cc245f871df3e94c2f1459a10dddbd37733d4e414747d577e4bee0be281f3e7",
+            "original_features": 70,
+            "classifier_features_after_onehot": 70,
+            "official_test_set_untouched": true
+          }
+        ],
+        "feature_names": [
+          "destination port",
+          "flow duration",
+          "total fwd packets",
+          "total backward packets",
+          "total length of fwd packets",
+          "total length of bwd packets",
+          "fwd packet length max",
+          "fwd packet length min",
+          "fwd packet length mean",
+          "fwd packet length std",
+          "bwd packet length max",
+          "bwd packet length min",
+          "bwd packet length mean",
+          "bwd packet length std",
+          "flow bytes/s",
+          "flow packets/s",
+          "flow iat mean",
+          "flow iat std",
+          "flow iat max",
+          "flow iat min",
+          "fwd iat total",
+          "fwd iat mean",
+          "fwd iat std",
+          "fwd iat max",
+          "fwd iat min",
+          "bwd iat total",
+          "bwd iat mean",
+          "bwd iat std",
+          "bwd iat max",
+          "bwd iat min",
+          "fwd psh flags",
+          "fwd urg flags",
+          "fwd header length",
+          "bwd header length",
+          "fwd packets/s",
+          "bwd packets/s",
+          "min packet length",
+          "max packet length",
+          "packet length mean",
+          "packet length std",
+          "packet length variance",
+          "fin flag count",
+          "syn flag count",
+          "rst flag count",
+          "psh flag count",
+          "ack flag count",
+          "urg flag count",
+          "cwe flag count",
+          "ece flag count",
+          "down/up ratio",
+          "average packet size",
+          "avg fwd segment size",
+          "avg bwd segment size",
+          "fwd header length.1",
+          "subflow fwd packets",
+          "subflow fwd bytes",
+          "subflow bwd packets",
+          "subflow bwd bytes",
+          "init_win_bytes_forward",
+          "init_win_bytes_backward",
+          "act_data_pkt_fwd",
+          "min_seg_size_forward",
+          "active mean",
+          "active std",
+          "active max",
+          "active min",
+          "idle mean",
+          "idle std",
+          "idle max",
+          "idle min"
+        ],
+        "original_features": [
+          70
+        ],
+        "classifier_features_after_onehot": [
+          70
+        ],
+        "dimension_consistent": true
+      },
+      "accounting": {
+        "raw_columns": 79,
+        "target_columns": [
+          "label"
+        ],
+        "identifier_columns": [],
+        "constant_columns": [
+          "bwd psh flags",
+          "bwd urg flags",
+          "fwd avg bytes/bulk",
+          "fwd avg packets/bulk",
+          "fwd avg bulk rate",
+          "bwd avg bytes/bulk",
+          "bwd avg packets/bulk",
+          "bwd avg bulk rate"
+        ],
+        "constant_evidence": {
+          "bwd psh flags": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          },
+          "bwd urg flags": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          },
+          "fwd avg bytes/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          },
+          "fwd avg packets/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          },
+          "fwd avg bulk rate": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          },
+          "bwd avg bytes/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          },
+          "bwd avg packets/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          },
+          "bwd avg bulk rate": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 2830743
+          }
+        },
+        "unexplained": [],
+        "features_used": 70,
+        "balances": true
+      }
+    },
+    "cicddos2019": {
+      "raw_files": 18,
+      "raw_example": "/opt/CIC-DDoS2019/CSV-03-11/LDAP.csv",
+      "raw_column_count": 88,
+      "cache": {
+        "server_path": "/opt/ids_revision/v4_deep_baseline/cache/cicddos2019.audit.json",
+        "sha256": "a9dabe1c6c74dbc583a66d0f501b7efc89f3c10e178e17ef5813bb1d03820f2d",
+        "feature_count": 80,
+        "dropped_identity_columns": [
+          "destination ip",
+          "flow id",
+          "simillarhttp",
+          "source ip",
+          "source port",
+          "timestamp",
+          "unnamed: 0"
+        ],
+        "train_capture_date": "2018-11-03",
+        "test_capture_date": "2018-12-01"
+      },
+      "run": {
+        "seed_count": 3,
+        "seeds": [
+          {
+            "seed": 123,
+            "server_path": "/opt/ids_revision/v4_deep_baseline/ddos_results/cicddos2019/seed123/metrics.json",
+            "sha256": "504df454d467985f2b62dc53573cfc1837cfcdcaa8989a5c521bd9b0b392b0f4",
+            "original_features": 68,
+            "classifier_features_after_onehot": 68,
+            "official_test_set_untouched": false
+          },
+          {
+            "seed": 42,
+            "server_path": "/opt/ids_revision/v4_deep_baseline/ddos_results/cicddos2019/seed42/metrics.json",
+            "sha256": "84eec80baf09c014a741a46af0a9698a1e0aeb3bc4b581dfee8ad63a10958429",
+            "original_features": 68,
+            "classifier_features_after_onehot": 68,
+            "official_test_set_untouched": false
+          },
+          {
+            "seed": 456,
+            "server_path": "/opt/ids_revision/v4_deep_baseline/ddos_results/cicddos2019/seed456/metrics.json",
+            "sha256": "6de8a1ecabc7fd9d80b35e77be161ee13bf9d2950b7c2bd0d273029117117742",
+            "original_features": 68,
+            "classifier_features_after_onehot": 68,
+            "official_test_set_untouched": false
+          }
+        ],
+        "feature_names": [
+          "destination port",
+          "protocol",
+          "flow duration",
+          "total fwd packets",
+          "total backward packets",
+          "total length of fwd packets",
+          "total length of bwd packets",
+          "fwd packet length max",
+          "fwd packet length min",
+          "fwd packet length mean",
+          "fwd packet length std",
+          "bwd packet length max",
+          "bwd packet length min",
+          "bwd packet length mean",
+          "bwd packet length std",
+          "flow bytes/s",
+          "flow packets/s",
+          "flow iat mean",
+          "flow iat std",
+          "flow iat max",
+          "flow iat min",
+          "fwd iat total",
+          "fwd iat mean",
+          "fwd iat std",
+          "fwd iat max",
+          "fwd iat min",
+          "bwd iat total",
+          "bwd iat mean",
+          "bwd iat std",
+          "bwd iat max",
+          "bwd iat min",
+          "fwd psh flags",
+          "fwd header length",
+          "bwd header length",
+          "fwd packets/s",
+          "bwd packets/s",
+          "min packet length",
+          "max packet length",
+          "packet length mean",
+          "packet length std",
+          "packet length variance",
+          "syn flag count",
+          "rst flag count",
+          "ack flag count",
+          "urg flag count",
+          "cwe flag count",
+          "down/up ratio",
+          "average packet size",
+          "avg fwd segment size",
+          "avg bwd segment size",
+          "fwd header length.1",
+          "subflow fwd packets",
+          "subflow fwd bytes",
+          "subflow bwd packets",
+          "subflow bwd bytes",
+          "init_win_bytes_forward",
+          "init_win_bytes_backward",
+          "act_data_pkt_fwd",
+          "min_seg_size_forward",
+          "active mean",
+          "active std",
+          "active max",
+          "active min",
+          "idle mean",
+          "idle std",
+          "idle max",
+          "idle min",
+          "inbound"
+        ],
+        "original_features": [
+          68
+        ],
+        "classifier_features_after_onehot": [
+          68
+        ],
+        "dimension_consistent": true
+      },
+      "accounting": {
+        "raw_columns": 88,
+        "target_columns": [
+          "label"
+        ],
+        "identifier_columns": [
+          "unnamed: 0",
+          "flow id",
+          "source ip",
+          "source port",
+          "destination ip",
+          "timestamp",
+          "simillarhttp"
+        ],
+        "constant_columns": [
+          "bwd psh flags",
+          "fwd urg flags",
+          "bwd urg flags",
+          "fin flag count",
+          "psh flag count",
+          "ece flag count",
+          "fwd avg bytes/bulk",
+          "fwd avg packets/bulk",
+          "fwd avg bulk rate",
+          "bwd avg bytes/bulk",
+          "bwd avg packets/bulk",
+          "bwd avg bulk rate"
+        ],
+        "constant_evidence": {
+          "bwd psh flags": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "fwd urg flags": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "bwd urg flags": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "fin flag count": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "psh flag count": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "ece flag count": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "fwd avg bytes/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "fwd avg packets/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "fwd avg bulk rate": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "bwd avg bytes/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "bwd avg packets/bulk": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          },
+          "bwd avg bulk rate": {
+            "distinct_values_observed": 1,
+            "is_constant": true,
+            "value": 0,
+            "rows_scanned": 70427637
+          }
+        },
+        "unexplained": [],
+        "features_used": 68,
+        "balances": true
+      }
+    }
+  },
+  "sampling": {
+    "cicddos2019": {
+      "server_path": "/opt/ids_revision/v4_deep_baseline/cache/cicddos2019.audit.json",
+      "sha256": "a9dabe1c6c74dbc583a66d0f501b7efc89f3c10e178e17ef5813bb1d03820f2d",
+      "periods": {
+        "train": {
+          "day": "CSV-03-11",
+          "capture_date": "2018-11-03",
+          "full_period_rows": 20364525,
+          "sampled_rows": 250000,
+          "sampling_method": "proportional stratified over (file, label) cells; largest-remainder quotas; uniform draw within each cell",
+          "max_family_shift_pp": 0.000289,
+          "per_file_rate_spread": 2.439999999999387e-06,
+          "prevalence_gap_pp": 0.00012663246503619163,
+          "families_tracked": 8
+        },
+        "test": {
+          "day": "CSV-01-12",
+          "capture_date": "2018-12-01",
+          "full_period_rows": 50063112,
+          "sampled_rows": 250000,
+          "sampling_method": "proportional stratified over (file, label) cells; largest-remainder quotas; uniform draw within each cell",
+          "max_family_shift_pp": 0.000189,
+          "per_file_rate_spread": 2.3799999999997434e-06,
+          "prevalence_gap_pp": 1.7368540738971205e-05,
+          "families_tracked": 13
+        }
+      },
+      "problems": [],
+      "status": "PASS"
+    }
+  },
+  "problems": [],
+  "status": "PASS"
+}

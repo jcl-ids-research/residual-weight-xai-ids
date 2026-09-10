@@ -1,0 +1,310 @@
+{
+  "day": "CSV-01-12",
+  "files": 11,
+  "per_file_target": 68181,
+  "total_rows": 50063112,
+  "row_span": {
+    "smallest_file": 370605,
+    "largest_file": 20107827
+  },
+  "inclusion_curve_largest_file": [
+    {
+      "chunk": 1,
+      "rows_seen": 400000,
+      "inclusion_probability": 0.170453
+    },
+    {
+      "chunk": 2,
+      "rows_seen": 800000,
+      "inclusion_probability": 0.085226
+    },
+    {
+      "chunk": 3,
+      "rows_seen": 1200000,
+      "inclusion_probability": 0.056817
+    },
+    {
+      "chunk": 4,
+      "rows_seen": 1600000,
+      "inclusion_probability": 0.042613
+    },
+    {
+      "chunk": 5,
+      "rows_seen": 2000000,
+      "inclusion_probability": 0.034091
+    },
+    {
+      "chunk": 6,
+      "rows_seen": 2400000,
+      "inclusion_probability": 0.028409
+    },
+    {
+      "chunk": 7,
+      "rows_seen": 2800000,
+      "inclusion_probability": 0.02435
+    },
+    {
+      "chunk": 8,
+      "rows_seen": 3200000,
+      "inclusion_probability": 0.021307
+    },
+    {
+      "chunk": 9,
+      "rows_seen": 3600000,
+      "inclusion_probability": 0.018939
+    },
+    {
+      "chunk": 10,
+      "rows_seen": 4000000,
+      "inclusion_probability": 0.017045
+    },
+    {
+      "chunk": 11,
+      "rows_seen": 4400000,
+      "inclusion_probability": 0.015496
+    },
+    {
+      "chunk": 12,
+      "rows_seen": 4800000,
+      "inclusion_probability": 0.014204
+    }
+  ],
+  "profiles": [
+    {
+      "file": "DrDoS_DNS.csv",
+      "rows": 5074413,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_DNS": 5071011,
+        "BENIGN": 3402
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_DNS": -0.004015,
+        "BENIGN": 0.004015
+      },
+      "max_abs_drift": 0.004015
+    },
+    {
+      "file": "DrDoS_LDAP.csv",
+      "rows": 2181542,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_LDAP": 2179930,
+        "BENIGN": 1612
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_LDAP": 0.000589,
+        "BENIGN": -0.000589
+      },
+      "max_abs_drift": 0.000589
+    },
+    {
+      "file": "DrDoS_MSSQL.csv",
+      "rows": 4524498,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_MSSQL": 4522492,
+        "BENIGN": 2006
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_MSSQL": -0.001214,
+        "BENIGN": 0.001214
+      },
+      "max_abs_drift": 0.001214
+    },
+    {
+      "file": "DrDoS_NTP.csv",
+      "rows": 1217007,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_NTP": 1202642,
+        "BENIGN": 14365
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_NTP": -0.020334,
+        "BENIGN": 0.020334
+      },
+      "max_abs_drift": 0.020334
+    },
+    {
+      "file": "DrDoS_NetBIOS.csv",
+      "rows": 4094986,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_NetBIOS": 4093279,
+        "BENIGN": 1707
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_NetBIOS": -0.001093,
+        "BENIGN": 0.001093
+      },
+      "max_abs_drift": 0.001093
+    },
+    {
+      "file": "DrDoS_SNMP.csv",
+      "rows": 5161377,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_SNMP": 5159870,
+        "BENIGN": 1507
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_SNMP": -0.000953,
+        "BENIGN": 0.000953
+      },
+      "max_abs_drift": 0.000953
+    },
+    {
+      "file": "DrDoS_SSDP.csv",
+      "rows": 2611374,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_SSDP": 2610611,
+        "BENIGN": 763
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_SSDP": -1.8e-05,
+        "BENIGN": 1.8e-05
+      },
+      "max_abs_drift": 1.8e-05
+    },
+    {
+      "file": "DrDoS_UDP.csv",
+      "rows": 3136802,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "DrDoS_UDP": 3134645,
+        "BENIGN": 2157
+      },
+      "head_share_minus_full_share": {
+        "DrDoS_UDP": -0.001777,
+        "BENIGN": 0.001777
+      },
+      "max_abs_drift": 0.001777
+    },
+    {
+      "file": "Syn.csv",
+      "rows": 1582681,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "Syn": 1582289,
+        "BENIGN": 392
+      },
+      "head_share_minus_full_share": {
+        "Syn": -0.000145,
+        "BENIGN": 0.000145
+      },
+      "max_abs_drift": 0.000145
+    },
+    {
+      "file": "TFTP.csv",
+      "rows": 20107827,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "TFTP": 20082580,
+        "BENIGN": 25247
+      },
+      "head_share_minus_full_share": {
+        "TFTP": -0.001344,
+        "BENIGN": 0.001344
+      },
+      "max_abs_drift": 0.001344
+    },
+    {
+      "file": "UDPLag.csv",
+      "rows": 370605,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "UDP-lag": 366461,
+        "BENIGN": 3705,
+        "WebDDoS": 439
+      },
+      "head_share_minus_full_share": {
+        "UDP-lag": 0.0,
+        "BENIGN": 0.0,
+        "WebDDoS": 0.0
+      },
+      "max_abs_drift": 0.0
+    }
+  ],
+  "family_distortion": {
+    "per_file_target": 68181,
+    "families": {
+      "DrDoS_DNS": {
+        "true_share": 0.101408,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": -1.0498,
+        "relative_factor": 0.896
+      },
+      "DrDoS_LDAP": {
+        "true_share": 0.043593,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": 4.7316,
+        "relative_factor": 2.085
+      },
+      "DrDoS_MSSQL": {
+        "true_share": 0.090439,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": 0.0471,
+        "relative_factor": 1.005
+      },
+      "DrDoS_NTP": {
+        "true_share": 0.02405,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": 6.6859,
+        "relative_factor": 3.78
+      },
+      "DrDoS_NetBIOS": {
+        "true_share": 0.081855,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": 0.9054,
+        "relative_factor": 1.111
+      },
+      "DrDoS_SNMP": {
+        "true_share": 0.103185,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": -1.2275,
+        "relative_factor": 0.881
+      },
+      "DrDoS_SSDP": {
+        "true_share": 0.052206,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": 3.8703,
+        "relative_factor": 1.741
+      },
+      "DrDoS_UDP": {
+        "true_share": 0.062685,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": 2.8224,
+        "relative_factor": 1.45
+      },
+      "Syn": {
+        "true_share": 0.031642,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": 5.9267,
+        "relative_factor": 2.873
+      },
+      "TFTP": {
+        "true_share": 0.401601,
+        "sampler_share": 0.090909,
+        "absolute_shift_pp": -31.0692,
+        "relative_factor": 0.226
+      },
+      "UDP-lag": {
+        "true_share": 0.007328,
+        "sampler_share": 0.0908,
+        "absolute_shift_pp": 8.3472,
+        "relative_factor": 12.39
+      },
+      "WebDDoS": {
+        "true_share": 9e-06,
+        "sampler_share": 0.000109,
+        "absolute_shift_pp": 0.01,
+        "relative_factor": 12.39
+      }
+    },
+    "max_abs_shift_pp": 31.0692
+  },
+  "any_file_unordered": false,
+  "max_head_drift": 0.020334
+}

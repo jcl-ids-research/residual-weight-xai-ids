@@ -1,0 +1,232 @@
+{
+  "day": "CSV-03-11",
+  "files": 7,
+  "per_file_target": 107142,
+  "total_rows": 20364525,
+  "row_span": {
+    "smallest_file": 191694,
+    "largest_file": 5775786
+  },
+  "inclusion_curve_largest_file": [
+    {
+      "chunk": 1,
+      "rows_seen": 400000,
+      "inclusion_probability": 0.267855
+    },
+    {
+      "chunk": 2,
+      "rows_seen": 800000,
+      "inclusion_probability": 0.133928
+    },
+    {
+      "chunk": 3,
+      "rows_seen": 1200000,
+      "inclusion_probability": 0.089285
+    },
+    {
+      "chunk": 4,
+      "rows_seen": 1600000,
+      "inclusion_probability": 0.066964
+    },
+    {
+      "chunk": 5,
+      "rows_seen": 2000000,
+      "inclusion_probability": 0.053571
+    },
+    {
+      "chunk": 6,
+      "rows_seen": 2400000,
+      "inclusion_probability": 0.044643
+    },
+    {
+      "chunk": 7,
+      "rows_seen": 2800000,
+      "inclusion_probability": 0.038265
+    },
+    {
+      "chunk": 8,
+      "rows_seen": 3200000,
+      "inclusion_probability": 0.033482
+    },
+    {
+      "chunk": 9,
+      "rows_seen": 3600000,
+      "inclusion_probability": 0.029762
+    },
+    {
+      "chunk": 10,
+      "rows_seen": 4000000,
+      "inclusion_probability": 0.026786
+    },
+    {
+      "chunk": 11,
+      "rows_seen": 4400000,
+      "inclusion_probability": 0.02435
+    },
+    {
+      "chunk": 12,
+      "rows_seen": 4800000,
+      "inclusion_probability": 0.022321
+    }
+  ],
+  "profiles": [
+    {
+      "file": "LDAP.csv",
+      "rows": 2113234,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "LDAP": 1905191,
+        "NetBIOS": 202919,
+        "BENIGN": 5124
+      },
+      "head_share_minus_full_share": {
+        "LDAP": -0.416447,
+        "NetBIOS": 0.411275,
+        "BENIGN": 0.005173
+      },
+      "max_abs_drift": 0.416447
+    },
+    {
+      "file": "MSSQL.csv",
+      "rows": 5775786,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "MSSQL": 5763061,
+        "LDAP": 9931,
+        "BENIGN": 2794
+      },
+      "head_share_minus_full_share": {
+        "MSSQL": -0.024412,
+        "LDAP": 0.023108,
+        "BENIGN": 0.001304
+      },
+      "max_abs_drift": 0.024412
+    },
+    {
+      "file": "NetBIOS.csv",
+      "rows": 3455899,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "NetBIOS": 3454578,
+        "BENIGN": 1321
+      },
+      "head_share_minus_full_share": {
+        "NetBIOS": 0.000272,
+        "BENIGN": -0.000272
+      },
+      "max_abs_drift": 0.000272
+    },
+    {
+      "file": "Portmap.csv",
+      "rows": 191694,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "Portmap": 186960,
+        "BENIGN": 4734
+      },
+      "head_share_minus_full_share": {
+        "Portmap": 0.0,
+        "BENIGN": 0.0
+      },
+      "max_abs_drift": 0.0
+    },
+    {
+      "file": "Syn.csv",
+      "rows": 4320541,
+      "timestamps_monotonic": false,
+      "labels_full": {
+        "Syn": 4284751,
+        "BENIGN": 35790
+      },
+      "head_share_minus_full_share": {
+        "Syn": 0.008194,
+        "BENIGN": -0.008194
+      },
+      "max_abs_drift": 0.008194
+    },
+    {
+      "file": "UDP.csv",
+      "rows": 3782206,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "UDP": 3754680,
+        "MSSQL": 24392,
+        "BENIGN": 3134
+      },
+      "head_share_minus_full_share": {
+        "UDP": -0.058057,
+        "MSSQL": 0.054531,
+        "BENIGN": 0.003526
+      },
+      "max_abs_drift": 0.058057
+    },
+    {
+      "file": "UDPLag.csv",
+      "rows": 725165,
+      "timestamps_monotonic": true,
+      "labels_full": {
+        "Syn": 606749,
+        "UDP": 112475,
+        "BENIGN": 4068,
+        "UDPLag": 1873
+      },
+      "head_share_minus_full_share": {
+        "Syn": -0.132422,
+        "UDP": 0.126085,
+        "BENIGN": 0.004238,
+        "UDPLag": 0.0021
+      },
+      "max_abs_drift": 0.132422
+    }
+  ],
+  "family_distortion": {
+    "per_file_target": 107142,
+    "families": {
+      "LDAP": {
+        "true_share": 0.094306,
+        "sampler_share": 0.129352,
+        "absolute_shift_pp": 3.5046,
+        "relative_factor": 1.372
+      },
+      "MSSQL": {
+        "true_share": 0.28499,
+        "sampler_share": 0.143533,
+        "absolute_shift_pp": -14.1457,
+        "relative_factor": 0.504
+      },
+      "NetBIOS": {
+        "true_share": 0.180105,
+        "sampler_share": 0.156608,
+        "absolute_shift_pp": -2.3497,
+        "relative_factor": 0.87
+      },
+      "Portmap": {
+        "true_share": 0.009206,
+        "sampler_share": 0.142857,
+        "absolute_shift_pp": 13.3651,
+        "relative_factor": 15.517
+      },
+      "Syn": {
+        "true_share": 0.240871,
+        "sampler_share": 0.263061,
+        "absolute_shift_pp": 2.219,
+        "relative_factor": 1.092
+      },
+      "UDP": {
+        "true_share": 0.190429,
+        "sampler_share": 0.164218,
+        "absolute_shift_pp": -2.6212,
+        "relative_factor": 0.862
+      },
+      "UDPLag": {
+        "true_share": 9.2e-05,
+        "sampler_share": 0.000371,
+        "absolute_shift_pp": 0.0279,
+        "relative_factor": 4.023
+      }
+    },
+    "max_abs_shift_pp": 14.1457
+  },
+  "any_file_unordered": true,
+  "max_head_drift": 0.416447
+}

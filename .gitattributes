@@ -1,0 +1,4 @@
+# Provenance depends on byte-exact files. Line-ending translation would change
+# every SHA-256 on checkout and break the snapshot and evidence manifests, so
+# it is disabled for everything.
+* -text

@@ -1,0 +1,50 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+build/
+dist/
+.coverage
+
+# Raw datasets, model weights, predictions and caches are never published here.
+*.npz
+*.npy
+*.ubj
+*.joblib
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.safetensors
+
+# Archives and databases
+*.zip
+*.tar
+*.tar.gz
+*.7z
+*.db
+*.sqlite
+
+# Secrets and credentials
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_ed25519
+*.secret
+
+# Local verification scratch space
+_tmp*/
+verification_report.json
+
+# IDE and OS metadata
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
